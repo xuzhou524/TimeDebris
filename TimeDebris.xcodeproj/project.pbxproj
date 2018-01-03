@@ -10,6 +10,9 @@
 		160C5D16A62A2B8AF33A9BE8 /* Pods_TimeDebris.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF92AF40E5E0D40609371BBE /* Pods_TimeDebris.framework */; };
 		530B15ED1FFCCDDB00D5CBE4 /* DWViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 530B15E91FFCCDDA00D5CBE4 /* DWViewCell.m */; };
 		530B15EE1FFCCDDB00D5CBE4 /* DWFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 530B15EA1FFCCDDB00D5CBE4 /* DWFlowLayout.m */; };
+		530B15F21FFCD26F00D5CBE4 /* image2.png in Resources */ = {isa = PBXBuildFile; fileRef = 530B15EF1FFCD26E00D5CBE4 /* image2.png */; };
+		530B15F31FFCD26F00D5CBE4 /* image1.png in Resources */ = {isa = PBXBuildFile; fileRef = 530B15F01FFCD26E00D5CBE4 /* image1.png */; };
+		530B15F41FFCD26F00D5CBE4 /* image3.png in Resources */ = {isa = PBXBuildFile; fileRef = 530B15F11FFCD26F00D5CBE4 /* image3.png */; };
 		532150881FF5F9CD00C67F13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532150871FF5F9CD00C67F13 /* AppDelegate.swift */; };
 		5321508A1FF5F9CD00C67F13 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532150891FF5F9CD00C67F13 /* ViewController.swift */; };
 		5321508D1FF5F9CD00C67F13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5321508B1FF5F9CD00C67F13 /* Main.storyboard */; };
@@ -24,6 +27,9 @@
 		530B15EA1FFCCDDB00D5CBE4 /* DWFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWFlowLayout.m; sourceTree = "<group>"; };
 		530B15EB1FFCCDDB00D5CBE4 /* DWViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWViewCell.h; sourceTree = "<group>"; };
 		530B15EC1FFCCDDB00D5CBE4 /* DWFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWFlowLayout.h; sourceTree = "<group>"; };
+		530B15EF1FFCD26E00D5CBE4 /* image2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image2.png; sourceTree = "<group>"; };
+		530B15F01FFCD26E00D5CBE4 /* image1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image1.png; sourceTree = "<group>"; };
+		530B15F11FFCD26F00D5CBE4 /* image3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image3.png; sourceTree = "<group>"; };
 		532150841FF5F9CD00C67F13 /* TimeDebris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeDebris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		532150871FF5F9CD00C67F13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		532150891FF5F9CD00C67F13 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +76,9 @@
 		532150861FF5F9CD00C67F13 /* TimeDebris */ = {
 			isa = PBXGroup;
 			children = (
+				530B15F01FFCD26E00D5CBE4 /* image1.png */,
+				530B15EF1FFCD26E00D5CBE4 /* image2.png */,
+				530B15F11FFCD26F00D5CBE4 /* image3.png */,
 				530B15EC1FFCCDDB00D5CBE4 /* DWFlowLayout.h */,
 				530B15EA1FFCCDDB00D5CBE4 /* DWFlowLayout.m */,
 				530B15EB1FFCCDDB00D5CBE4 /* DWViewCell.h */,
@@ -167,7 +176,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				532150951FF5F9CE00C67F13 /* LaunchScreen.storyboard in Resources */,
+				530B15F41FFCD26F00D5CBE4 /* image3.png in Resources */,
+				530B15F31FFCD26F00D5CBE4 /* image1.png in Resources */,
 				532150921FF5F9CE00C67F13 /* Assets.xcassets in Resources */,
+				530B15F21FFCD26F00D5CBE4 /* image2.png in Resources */,
 				5321508D1FF5F9CD00C67F13 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
