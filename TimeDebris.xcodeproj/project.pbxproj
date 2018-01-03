@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		160C5D16A62A2B8AF33A9BE8 /* Pods_TimeDebris.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF92AF40E5E0D40609371BBE /* Pods_TimeDebris.framework */; };
+		530B15ED1FFCCDDB00D5CBE4 /* DWViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 530B15E91FFCCDDA00D5CBE4 /* DWViewCell.m */; };
+		530B15EE1FFCCDDB00D5CBE4 /* DWFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 530B15EA1FFCCDDB00D5CBE4 /* DWFlowLayout.m */; };
 		532150881FF5F9CD00C67F13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532150871FF5F9CD00C67F13 /* AppDelegate.swift */; };
 		5321508A1FF5F9CD00C67F13 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532150891FF5F9CD00C67F13 /* ViewController.swift */; };
 		5321508D1FF5F9CD00C67F13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5321508B1FF5F9CD00C67F13 /* Main.storyboard */; };
@@ -17,6 +19,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		530B15E81FFCCDD900D5CBE4 /* TimeDebris-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TimeDebris-Bridging-Header.h"; sourceTree = "<group>"; };
+		530B15E91FFCCDDA00D5CBE4 /* DWViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWViewCell.m; sourceTree = "<group>"; };
+		530B15EA1FFCCDDB00D5CBE4 /* DWFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWFlowLayout.m; sourceTree = "<group>"; };
+		530B15EB1FFCCDDB00D5CBE4 /* DWViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWViewCell.h; sourceTree = "<group>"; };
+		530B15EC1FFCCDDB00D5CBE4 /* DWFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWFlowLayout.h; sourceTree = "<group>"; };
 		532150841FF5F9CD00C67F13 /* TimeDebris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeDebris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		532150871FF5F9CD00C67F13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		532150891FF5F9CD00C67F13 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +70,10 @@
 		532150861FF5F9CD00C67F13 /* TimeDebris */ = {
 			isa = PBXGroup;
 			children = (
+				530B15EC1FFCCDDB00D5CBE4 /* DWFlowLayout.h */,
+				530B15EA1FFCCDDB00D5CBE4 /* DWFlowLayout.m */,
+				530B15EB1FFCCDDB00D5CBE4 /* DWViewCell.h */,
+				530B15E91FFCCDDA00D5CBE4 /* DWViewCell.m */,
 				532150871FF5F9CD00C67F13 /* AppDelegate.swift */,
 				532150891FF5F9CD00C67F13 /* ViewController.swift */,
 				5321508B1FF5F9CD00C67F13 /* Main.storyboard */,
@@ -70,6 +81,7 @@
 				532150931FF5F9CE00C67F13 /* LaunchScreen.storyboard */,
 				532150961FF5F9CE00C67F13 /* Info.plist */,
 				5321508E1FF5F9CE00C67F13 /* TimeDebris.xcdatamodeld */,
+				530B15E81FFCCDD900D5CBE4 /* TimeDebris-Bridging-Header.h */,
 			);
 			path = TimeDebris;
 			sourceTree = "<group>";
@@ -126,6 +138,7 @@
 				TargetAttributes = {
 					532150831FF5F9CD00C67F13 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -218,7 +231,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				532150901FF5F9CE00C67F13 /* TimeDebris.xcdatamodeld in Sources */,
+				530B15ED1FFCCDDB00D5CBE4 /* DWViewCell.m in Sources */,
 				5321508A1FF5F9CD00C67F13 /* ViewController.swift in Sources */,
+				530B15EE1FFCCDDB00D5CBE4 /* DWFlowLayout.m in Sources */,
 				532150881FF5F9CD00C67F13 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,6 +372,7 @@
 			baseConfigurationReference = 8CFDF6BBAECB9C5DCB586C92 /* Pods-TimeDebris.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6JC78V6G2N;
 				INFOPLIST_FILE = TimeDebris/Info.plist;
@@ -364,6 +380,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TimeDebris.weiYinJi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TimeDebris/TimeDebris-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -374,6 +392,7 @@
 			baseConfigurationReference = C1A2255362AE26B94DA504F6 /* Pods-TimeDebris.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6JC78V6G2N;
 				INFOPLIST_FILE = TimeDebris/Info.plist;
@@ -381,6 +400,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TimeDebris.weiYinJi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TimeDebris/TimeDebris-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
