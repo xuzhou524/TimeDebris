@@ -17,7 +17,6 @@
 		538D32D61FFE1EEA00DF4C9A /* DWFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 538D32CE1FFE1EEA00DF4C9A /* DWFlowLayout.m */; };
 		538D32D71FFE1EEA00DF4C9A /* DWViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 538D32D01FFE1EEA00DF4C9A /* DWViewCell.m */; };
 		538D32D81FFE1EEA00DF4C9A /* HomeTapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538D32D11FFE1EEA00DF4C9A /* HomeTapView.swift */; };
-		538D32D91FFE1EEA00DF4C9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538D32D41FFE1EEA00DF4C9A /* ViewController.swift */; };
 		538D32DD1FFE209800DF4C9A /* XZClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538D32DA1FFE209800DF4C9A /* XZClient.swift */; };
 		538D32DE1FFE209800DF4C9A /* XZSwiftColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538D32DB1FFE209800DF4C9A /* XZSwiftColor.swift */; };
 		538D32DF1FFE209800DF4C9A /* XZSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538D32DC1FFE209800DF4C9A /* XZSetting.swift */; };
@@ -38,7 +37,6 @@
 		538D32CF1FFE1EEA00DF4C9A /* DWViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWViewCell.h; sourceTree = "<group>"; };
 		538D32D01FFE1EEA00DF4C9A /* DWViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWViewCell.m; sourceTree = "<group>"; };
 		538D32D11FFE1EEA00DF4C9A /* HomeTapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTapView.swift; sourceTree = "<group>"; };
-		538D32D41FFE1EEA00DF4C9A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		538D32DA1FFE209800DF4C9A /* XZClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZClient.swift; sourceTree = "<group>"; };
 		538D32DB1FFE209800DF4C9A /* XZSwiftColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZSwiftColor.swift; sourceTree = "<group>"; };
 		538D32DC1FFE209800DF4C9A /* XZSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZSetting.swift; sourceTree = "<group>"; };
@@ -80,7 +78,6 @@
 		532150861FF5F9CD00C67F13 /* TimeDebris */ = {
 			isa = PBXGroup;
 			children = (
-				538D32D31FFE1EEA00DF4C9A /* Controller */,
 				538D32D21FFE1EEA00DF4C9A /* Libs */,
 				538D32D51FFE1EEA00DF4C9A /* Model */,
 				538D32CC1FFE1EEA00DF4C9A /* Vews */,
@@ -116,14 +113,6 @@
 				538D32DB1FFE209800DF4C9A /* XZSwiftColor.swift */,
 			);
 			path = Libs;
-			sourceTree = "<group>";
-		};
-		538D32D31FFE1EEA00DF4C9A /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				538D32D41FFE1EEA00DF4C9A /* ViewController.swift */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		538D32D51FFE1EEA00DF4C9A /* Model */ = {
@@ -281,7 +270,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				538D32D91FFE1EEA00DF4C9A /* ViewController.swift in Sources */,
 				532150901FF5F9CE00C67F13 /* TimeDebris.xcdatamodeld in Sources */,
 				538D32DF1FFE209800DF4C9A /* XZSetting.swift in Sources */,
 				538D32D71FFE1EEA00DF4C9A /* DWViewCell.m in Sources */,
