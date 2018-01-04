@@ -5,6 +5,7 @@ use_frameworks!
 def pods
    pod 'Fabric'
    pod 'Crashlytics'
+   pod 'SnapKit'
 end
 
 
