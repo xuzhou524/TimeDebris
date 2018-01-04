@@ -9,31 +9,58 @@
 import UIKit
 
 class HomeTapView: UIView {
-    let iconImageView : UIImageView = {
-        let iconImageView = UIImageView()
-        //iconImageView.backgroundColor = XZSwiftColor.red
-        return iconImageView
+    let addImageView : UIImageView = {
+        let addImageView = UIImageView()
+        addImageView.layer.shadowOpacity = 0.8
+        addImageView.layer.shadowColor = XZSwiftColor.xzGlay129.cgColor
+        addImageView.layer.shadowOffset = CGSize(width: 0, height: 0)
+        addImageView.layer.shadowRadius = 5
+        addImageView.layer.cornerRadius = 30;
+        addImageView.image = UIImage.init(named: "tianjia")
+        addImageView.backgroundColor = XZSwiftColor.white
+        return addImageView
     }()
     
-    let titleLabel: UILabel = {
-        let titleLabel = UILabel()
-        titleLabel.font = XZClient.XZFont2(size: 14)
-        titleLabel.textColor = XZSwiftColor.xzGlay50
-        return titleLabel
+    let liebiaoImageView : UIImageView = {
+        let liebiaoImageView = UIImageView()
+        liebiaoImageView.image = UIImage.init(named: "liebiao")
+        return liebiaoImageView
     }()
+    
+    let userImageView : UIImageView = {
+        let userImageView = UIImageView()
+        userImageView.image = UIImage.init(named: "user")
+        return userImageView
+    }()
+    
+//    let titleLabel: UILabel = {
+//        let titleLabel = UILabel()
+//        titleLabel.font = XZClient.XZFont2(size: 14)
+//        titleLabel.textColor = XZSwiftColor.xzGlay50
+//        return titleLabel
+//    }()
 
     init() {
-        super.init(frame: CGRect(x: 0, y: 0, width: XZClient.ScreenWidth()/4.0, height: 80))
-        self.addSubview(iconImageView)
-        iconImageView.snp.makeConstraints({ (make) -> Void in
-            make.top.equalTo(self).offset(15)
+        super.init(frame: CGRect(x: 0, y: 0, width: XZClient.ScreenWidth(), height: 80))
+        self.addSubview(addImageView)
+        addImageView.snp.makeConstraints({ (make) -> Void in
+            make.bottom.equalTo(self).offset(-50)
             make.centerX.equalTo(self)
-            make.width.height.equalTo(40)
+            make.width.height.equalTo(60)
         });
-        self.addSubview(titleLabel)
-        titleLabel.snp.makeConstraints({ (make) -> Void in
-            make.centerX.equalTo(iconImageView)
-            make.top.equalTo(iconImageView.snp.bottom).offset(10)
+        
+        self.addSubview(liebiaoImageView)
+        liebiaoImageView.snp.makeConstraints({ (make) -> Void in
+            make.bottom.equalTo(self).offset(-30)
+            make.left.equalTo(self).offset(30)
+            make.width.height.equalTo(25)
+        });
+        
+        self.addSubview(userImageView)
+        userImageView.snp.makeConstraints({ (make) -> Void in
+            make.bottom.equalTo(self).offset(-30)
+            make.right.equalTo(self).offset(-30)
+            make.width.height.equalTo(25)
         });
     }
     

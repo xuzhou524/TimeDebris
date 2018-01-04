@@ -14,7 +14,6 @@
 		532150901FF5F9CE00C67F13 /* TimeDebris.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5321508E1FF5F9CE00C67F13 /* TimeDebris.xcdatamodeld */; };
 		532150921FF5F9CE00C67F13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 532150911FF5F9CE00C67F13 /* Assets.xcassets */; };
 		532150951FF5F9CE00C67F13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 532150931FF5F9CE00C67F13 /* LaunchScreen.storyboard */; };
-		532469E51FFE221000FD3101 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532469E41FFE220F00FD3101 /* ViewController.swift */; };
 		538D32D61FFE1EEA00DF4C9A /* DWFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 538D32CE1FFE1EEA00DF4C9A /* DWFlowLayout.m */; };
 		538D32D71FFE1EEA00DF4C9A /* DWViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 538D32D01FFE1EEA00DF4C9A /* DWViewCell.m */; };
 		538D32D81FFE1EEA00DF4C9A /* HomeTapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538D32D11FFE1EEA00DF4C9A /* HomeTapView.swift */; };
@@ -33,7 +32,6 @@
 		532150911FF5F9CE00C67F13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		532150941FF5F9CE00C67F13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		532150961FF5F9CE00C67F13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		532469E41FFE220F00FD3101 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		538D32CD1FFE1EEA00DF4C9A /* DWFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWFlowLayout.h; sourceTree = "<group>"; };
 		538D32CE1FFE1EEA00DF4C9A /* DWFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWFlowLayout.m; sourceTree = "<group>"; };
 		538D32CF1FFE1EEA00DF4C9A /* DWViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWViewCell.h; sourceTree = "<group>"; };
@@ -80,7 +78,6 @@
 		532150861FF5F9CD00C67F13 /* TimeDebris */ = {
 			isa = PBXGroup;
 			children = (
-				532469E31FFE220F00FD3101 /* Controller */,
 				538D32D21FFE1EEA00DF4C9A /* Libs */,
 				538D32D51FFE1EEA00DF4C9A /* Model */,
 				538D32CC1FFE1EEA00DF4C9A /* Vews */,
@@ -94,14 +91,6 @@
 				530B15E81FFCCDD900D5CBE4 /* TimeDebris-Bridging-Header.h */,
 			);
 			path = TimeDebris;
-			sourceTree = "<group>";
-		};
-		532469E31FFE220F00FD3101 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				532469E41FFE220F00FD3101 /* ViewController.swift */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		538D32CC1FFE1EEA00DF4C9A /* Vews */ = {
@@ -284,7 +273,6 @@
 				532150901FF5F9CE00C67F13 /* TimeDebris.xcdatamodeld in Sources */,
 				538D32DF1FFE209800DF4C9A /* XZSetting.swift in Sources */,
 				538D32D71FFE1EEA00DF4C9A /* DWViewCell.m in Sources */,
-				532469E51FFE221000FD3101 /* ViewController.swift in Sources */,
 				538D32DE1FFE209800DF4C9A /* XZSwiftColor.swift in Sources */,
 				538D32D61FFE1EEA00DF4C9A /* DWFlowLayout.m in Sources */,
 				532150881FF5F9CD00C67F13 /* AppDelegate.swift in Sources */,
