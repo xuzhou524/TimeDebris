@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import SnapKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
