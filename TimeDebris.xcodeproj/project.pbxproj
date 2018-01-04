@@ -8,28 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		160C5D16A62A2B8AF33A9BE8 /* Pods_TimeDebris.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF92AF40E5E0D40609371BBE /* Pods_TimeDebris.framework */; };
-		530B15ED1FFCCDDB00D5CBE4 /* DWViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 530B15E91FFCCDDA00D5CBE4 /* DWViewCell.m */; };
-		530B15EE1FFCCDDB00D5CBE4 /* DWFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 530B15EA1FFCCDDB00D5CBE4 /* DWFlowLayout.m */; };
-		530B15F21FFCD26F00D5CBE4 /* image2.png in Resources */ = {isa = PBXBuildFile; fileRef = 530B15EF1FFCD26E00D5CBE4 /* image2.png */; };
 		530B15F31FFCD26F00D5CBE4 /* image1.png in Resources */ = {isa = PBXBuildFile; fileRef = 530B15F01FFCD26E00D5CBE4 /* image1.png */; };
-		530B15F41FFCD26F00D5CBE4 /* image3.png in Resources */ = {isa = PBXBuildFile; fileRef = 530B15F11FFCD26F00D5CBE4 /* image3.png */; };
 		532150881FF5F9CD00C67F13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532150871FF5F9CD00C67F13 /* AppDelegate.swift */; };
 		5321508A1FF5F9CD00C67F13 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532150891FF5F9CD00C67F13 /* ViewController.swift */; };
 		5321508D1FF5F9CD00C67F13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5321508B1FF5F9CD00C67F13 /* Main.storyboard */; };
 		532150901FF5F9CE00C67F13 /* TimeDebris.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5321508E1FF5F9CE00C67F13 /* TimeDebris.xcdatamodeld */; };
 		532150921FF5F9CE00C67F13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 532150911FF5F9CE00C67F13 /* Assets.xcassets */; };
 		532150951FF5F9CE00C67F13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 532150931FF5F9CE00C67F13 /* LaunchScreen.storyboard */; };
+		53DE209A1FFE190A00424033 /* DWFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 53DE20961FFE190A00424033 /* DWFlowLayout.m */; };
+		53DE209B1FFE190A00424033 /* DWViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53DE20981FFE190A00424033 /* DWViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		530B15E81FFCCDD900D5CBE4 /* TimeDebris-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TimeDebris-Bridging-Header.h"; sourceTree = "<group>"; };
-		530B15E91FFCCDDA00D5CBE4 /* DWViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWViewCell.m; sourceTree = "<group>"; };
-		530B15EA1FFCCDDB00D5CBE4 /* DWFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWFlowLayout.m; sourceTree = "<group>"; };
-		530B15EB1FFCCDDB00D5CBE4 /* DWViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWViewCell.h; sourceTree = "<group>"; };
-		530B15EC1FFCCDDB00D5CBE4 /* DWFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWFlowLayout.h; sourceTree = "<group>"; };
-		530B15EF1FFCD26E00D5CBE4 /* image2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image2.png; sourceTree = "<group>"; };
 		530B15F01FFCD26E00D5CBE4 /* image1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image1.png; sourceTree = "<group>"; };
-		530B15F11FFCD26F00D5CBE4 /* image3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image3.png; sourceTree = "<group>"; };
 		532150841FF5F9CD00C67F13 /* TimeDebris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeDebris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		532150871FF5F9CD00C67F13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		532150891FF5F9CD00C67F13 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +30,10 @@
 		532150911FF5F9CE00C67F13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		532150941FF5F9CE00C67F13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		532150961FF5F9CE00C67F13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53DE20961FFE190A00424033 /* DWFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWFlowLayout.m; sourceTree = "<group>"; };
+		53DE20971FFE190A00424033 /* DWViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWViewCell.h; sourceTree = "<group>"; };
+		53DE20981FFE190A00424033 /* DWViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWViewCell.m; sourceTree = "<group>"; };
+		53DE20991FFE190A00424033 /* DWFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWFlowLayout.h; sourceTree = "<group>"; };
 		8CFDF6BBAECB9C5DCB586C92 /* Pods-TimeDebris.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeDebris.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimeDebris/Pods-TimeDebris.debug.xcconfig"; sourceTree = "<group>"; };
 		AF92AF40E5E0D40609371BBE /* Pods_TimeDebris.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeDebris.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1A2255362AE26B94DA504F6 /* Pods-TimeDebris.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeDebris.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimeDebris/Pods-TimeDebris.release.xcconfig"; sourceTree = "<group>"; };
@@ -77,12 +73,6 @@
 			isa = PBXGroup;
 			children = (
 				530B15F01FFCD26E00D5CBE4 /* image1.png */,
-				530B15EF1FFCD26E00D5CBE4 /* image2.png */,
-				530B15F11FFCD26F00D5CBE4 /* image3.png */,
-				530B15EC1FFCCDDB00D5CBE4 /* DWFlowLayout.h */,
-				530B15EA1FFCCDDB00D5CBE4 /* DWFlowLayout.m */,
-				530B15EB1FFCCDDB00D5CBE4 /* DWViewCell.h */,
-				530B15E91FFCCDDA00D5CBE4 /* DWViewCell.m */,
 				532150871FF5F9CD00C67F13 /* AppDelegate.swift */,
 				532150891FF5F9CD00C67F13 /* ViewController.swift */,
 				5321508B1FF5F9CD00C67F13 /* Main.storyboard */,
@@ -91,8 +81,36 @@
 				532150961FF5F9CE00C67F13 /* Info.plist */,
 				5321508E1FF5F9CE00C67F13 /* TimeDebris.xcdatamodeld */,
 				530B15E81FFCCDD900D5CBE4 /* TimeDebris-Bridging-Header.h */,
+				53DE20931FFE18C800424033 /* controller */,
+				53DE20941FFE18C800424033 /* model */,
+				53DE20951FFE18C800424033 /* views */,
 			);
 			path = TimeDebris;
+			sourceTree = "<group>";
+		};
+		53DE20931FFE18C800424033 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		53DE20941FFE18C800424033 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		53DE20951FFE18C800424033 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				53DE20991FFE190A00424033 /* DWFlowLayout.h */,
+				53DE20961FFE190A00424033 /* DWFlowLayout.m */,
+				53DE20971FFE190A00424033 /* DWViewCell.h */,
+				53DE20981FFE190A00424033 /* DWViewCell.m */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 		C0A200E652A288209133E66B /* Frameworks */ = {
@@ -176,10 +194,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				532150951FF5F9CE00C67F13 /* LaunchScreen.storyboard in Resources */,
-				530B15F41FFCD26F00D5CBE4 /* image3.png in Resources */,
 				530B15F31FFCD26F00D5CBE4 /* image1.png in Resources */,
 				532150921FF5F9CE00C67F13 /* Assets.xcassets in Resources */,
-				530B15F21FFCD26F00D5CBE4 /* image2.png in Resources */,
 				5321508D1FF5F9CD00C67F13 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,9 +259,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				532150901FF5F9CE00C67F13 /* TimeDebris.xcdatamodeld in Sources */,
-				530B15ED1FFCCDDB00D5CBE4 /* DWViewCell.m in Sources */,
 				5321508A1FF5F9CD00C67F13 /* ViewController.swift in Sources */,
-				530B15EE1FFCCDDB00D5CBE4 /* DWFlowLayout.m in Sources */,
+				53DE209A1FFE190A00424033 /* DWFlowLayout.m in Sources */,
+				53DE209B1FFE190A00424033 /* DWViewCell.m in Sources */,
 				532150881FF5F9CD00C67F13 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

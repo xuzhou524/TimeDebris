@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let imageView = UIImageView.init(frame: CGRect(x:0, y:0, width:UIScreen.main.bounds.size.width, height:320))
-        imageView.image = UIImage.init(named: "image3")
+        imageView.image = UIImage.init(named: "image1")
         self.view.addSubview(imageView)
         
         let addImageView = UIImageView.init(frame: CGRect(x:UIScreen.main.bounds.size.width/2.0 - 30, y:UIScreen.main.bounds.size.height - 60 - 60, width:60, height:60))
