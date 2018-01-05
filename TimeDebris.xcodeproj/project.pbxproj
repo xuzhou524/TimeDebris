@@ -21,6 +21,9 @@
 		538D32DD1FFE209800DF4C9A /* XZClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538D32DA1FFE209800DF4C9A /* XZClient.swift */; };
 		538D32DE1FFE209800DF4C9A /* XZSwiftColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538D32DB1FFE209800DF4C9A /* XZSwiftColor.swift */; };
 		538D32DF1FFE209800DF4C9A /* XZSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538D32DC1FFE209800DF4C9A /* XZSetting.swift */; };
+		53E24A9B1FFF2A1F002117AF /* HomeSampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E24A9A1FFF2A1F002117AF /* HomeSampleView.swift */; };
+		53E24A9F1FFF2DC2002117AF /* NotoSansHans-DemiLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53E24A9D1FFF2DC2002117AF /* NotoSansHans-DemiLight.otf */; };
+		53E24AA01FFF2DC2002117AF /* NotoSansHans-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53E24A9E1FFF2DC2002117AF /* NotoSansHans-Light.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		538D32DA1FFE209800DF4C9A /* XZClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZClient.swift; sourceTree = "<group>"; };
 		538D32DB1FFE209800DF4C9A /* XZSwiftColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZSwiftColor.swift; sourceTree = "<group>"; };
 		538D32DC1FFE209800DF4C9A /* XZSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZSetting.swift; sourceTree = "<group>"; };
+		53E24A9A1FFF2A1F002117AF /* HomeSampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSampleView.swift; sourceTree = "<group>"; };
+		53E24A9D1FFF2DC2002117AF /* NotoSansHans-DemiLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansHans-DemiLight.otf"; sourceTree = "<group>"; };
+		53E24A9E1FFF2DC2002117AF /* NotoSansHans-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansHans-Light.otf"; sourceTree = "<group>"; };
 		8CFDF6BBAECB9C5DCB586C92 /* Pods-TimeDebris.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeDebris.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimeDebris/Pods-TimeDebris.debug.xcconfig"; sourceTree = "<group>"; };
 		AF92AF40E5E0D40609371BBE /* Pods_TimeDebris.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeDebris.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1A2255362AE26B94DA504F6 /* Pods-TimeDebris.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeDebris.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimeDebris/Pods-TimeDebris.release.xcconfig"; sourceTree = "<group>"; };
@@ -112,6 +118,7 @@
 				538D32CF1FFE1EEA00DF4C9A /* DWViewCell.h */,
 				538D32D01FFE1EEA00DF4C9A /* DWViewCell.m */,
 				538D32D11FFE1EEA00DF4C9A /* HomeTapView.swift */,
+				53E24A9A1FFF2A1F002117AF /* HomeSampleView.swift */,
 			);
 			path = Vews;
 			sourceTree = "<group>";
@@ -119,6 +126,7 @@
 		538D32D21FFE1EEA00DF4C9A /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				53E24A9C1FFF2DC2002117AF /* Font */,
 				538D32DA1FFE209800DF4C9A /* XZClient.swift */,
 				538D32DC1FFE209800DF4C9A /* XZSetting.swift */,
 				538D32DB1FFE209800DF4C9A /* XZSwiftColor.swift */,
@@ -131,6 +139,15 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		53E24A9C1FFF2DC2002117AF /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				53E24A9D1FFF2DC2002117AF /* NotoSansHans-DemiLight.otf */,
+				53E24A9E1FFF2DC2002117AF /* NotoSansHans-Light.otf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 		C0A200E652A288209133E66B /* Frameworks */ = {
@@ -215,6 +232,8 @@
 			files = (
 				532150951FF5F9CE00C67F13 /* LaunchScreen.storyboard in Resources */,
 				530B15F31FFCD26F00D5CBE4 /* image1.png in Resources */,
+				53E24A9F1FFF2DC2002117AF /* NotoSansHans-DemiLight.otf in Resources */,
+				53E24AA01FFF2DC2002117AF /* NotoSansHans-Light.otf in Resources */,
 				532150921FF5F9CE00C67F13 /* Assets.xcassets in Resources */,
 				5321508D1FF5F9CD00C67F13 /* Main.storyboard in Resources */,
 			);
@@ -285,6 +304,7 @@
 				538D32DF1FFE209800DF4C9A /* XZSetting.swift in Sources */,
 				538D32D71FFE1EEA00DF4C9A /* DWViewCell.m in Sources */,
 				532469E81FFE2BED00FD3101 /* ViewController.swift in Sources */,
+				53E24A9B1FFF2A1F002117AF /* HomeSampleView.swift in Sources */,
 				538D32DE1FFE209800DF4C9A /* XZSwiftColor.swift in Sources */,
 				538D32D61FFE1EEA00DF4C9A /* DWFlowLayout.m in Sources */,
 				532150881FF5F9CD00C67F13 /* AppDelegate.swift in Sources */,

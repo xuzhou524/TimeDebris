@@ -32,19 +32,12 @@ class HomeTapView: UIView {
         userImageView.image = UIImage.init(named: "user")
         return userImageView
     }()
-    
-//    let titleLabel: UILabel = {
-//        let titleLabel = UILabel()
-//        titleLabel.font = XZClient.XZFont2(size: 14)
-//        titleLabel.textColor = XZSwiftColor.xzGlay50
-//        return titleLabel
-//    }()
 
     init() {
         super.init(frame: CGRect(x: 0, y: 0, width: XZClient.ScreenWidth(), height: 80))
         self.addSubview(addImageView)
         addImageView.snp.makeConstraints({ (make) -> Void in
-            make.bottom.equalTo(self).offset(-50)
+            make.bottom.equalTo(self).offset(-45)
             make.centerX.equalTo(self)
             make.width.height.equalTo(60)
         });
