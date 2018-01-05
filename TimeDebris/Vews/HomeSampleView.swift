@@ -12,7 +12,7 @@ class HomeSampleView: UIView {
     
     let iconImageView : UIImageView = {
         let iconImageView = UIImageView()
-        iconImageView.image = UIImage.init(named: "image1")
+        iconImageView.image = UIImage.init(named: "image.jpg")
         return iconImageView
     }()
 
@@ -63,7 +63,7 @@ class HomeSampleView: UIView {
         self.backgroundColor = XZSwiftColor.white
         self.addSubview(iconImageView)
         iconImageView.snp.makeConstraints({ (make) -> Void in
-            make.bottom.equalTo(self).offset(-100)
+            make.bottom.equalTo(self).offset(-95)
             make.left.right.top.equalTo(self)
         });
         
