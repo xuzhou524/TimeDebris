@@ -16,29 +16,29 @@ class HomeSampleView: UIView {
         return iconImageView
     }()
 
-//    let addImageView : UIImageView = {
-//        let addImageView = UIImageView()
-//        addImageView.layer.shadowOpacity = 0.8
-//        addImageView.layer.shadowColor = XZSwiftColor.xzGlay129.cgColor
-//        addImageView.layer.shadowOffset = CGSize(width: 0, height: 0)
-//        addImageView.layer.shadowRadius = 5
-//        addImageView.layer.cornerRadius = 30;
-//        addImageView.image = UIImage.init(named: "tianjia")
-//        addImageView.backgroundColor = XZSwiftColor.white
-//        return addImageView
-//    }()
-//
-//    let liebiaoImageView : UIImageView = {
-//        let liebiaoImageView = UIImageView()
-//        liebiaoImageView.image = UIImage.init(named: "liebiao")
-//        return liebiaoImageView
-//    }()
-//
-//    let userImageView : UIImageView = {
-//        let userImageView = UIImageView()
-//        userImageView.image = UIImage.init(named: "user")
-//        return userImageView
-//    }()
+    let refreshImageView : UIImageView = {
+        let refreshImageView = UIImageView()
+        refreshImageView.image = UIImage.init(named: "refresh")
+        return refreshImageView
+    }()
+
+    let tuPianImageView : UIImageView = {
+        let tuPianImageView = UIImageView()
+        tuPianImageView.image = UIImage.init(named: "tuPian")
+        return tuPianImageView
+    }()
+
+    let xiaZaiImageView : UIImageView = {
+        let xiaZaiImageView = UIImageView()
+        xiaZaiImageView.image = UIImage.init(named: "xiaZai")
+        return xiaZaiImageView
+    }()
+    
+    let shareImageView : UIImageView = {
+        let shareImageView = UIImageView()
+        shareImageView.image = UIImage.init(named: "share")
+        return shareImageView
+    }()
     
     let titleLabel: UILabel = {
         let titleLabel = UILabel()
@@ -63,8 +63,21 @@ class HomeSampleView: UIView {
         self.backgroundColor = XZSwiftColor.white
         self.addSubview(iconImageView)
         iconImageView.snp.makeConstraints({ (make) -> Void in
-            make.bottom.equalTo(self).offset(-100)
+            make.bottom.equalTo(self).offset(-110)
             make.left.right.top.equalTo(self)
+        });
+        
+        self.addSubview(tuPianImageView)
+        tuPianImageView.snp.makeConstraints({ (make) -> Void in
+            make.bottom.equalTo(iconImageView).offset(-20)
+            make.right.equalTo(iconImageView.snp.centerX).offset(-10)
+            make.width.height.equalTo(20)
+        });
+        self.addSubview(xiaZaiImageView)
+        xiaZaiImageView.snp.makeConstraints({ (make) -> Void in
+            make.bottom.equalTo(tuPianImageView)
+            make.left.equalTo(iconImageView.snp.centerX).offset(10)
+            make.width.height.equalTo(20)
         });
         
         self.addSubview(titleLabel)
