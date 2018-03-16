@@ -18,6 +18,9 @@
 		53830437205B6477003ABE37 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53830436205B6477003ABE37 /* UserViewController.swift */; };
 		53830439205B6FA5003ABE37 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53830438205B6FA5003ABE37 /* ListViewController.swift */; };
 		5383043B205B708F003ABE37 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5383043A205B708F003ABE37 /* EditorViewController.swift */; };
+		5385831C205B9F20001807C3 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5385831B205B9F20001807C3 /* UITableView+Extension.swift */; };
+		5385831F205B9F2B001807C3 /* UITableView+FINAutomaticHeightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5385831E205B9F2B001807C3 /* UITableView+FINAutomaticHeightCell.swift */; };
+		53858321205B9FA7001807C3 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53858320205B9FA6001807C3 /* TitleTableViewCell.swift */; };
 		538D32D61FFE1EEA00DF4C9A /* DWFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 538D32CE1FFE1EEA00DF4C9A /* DWFlowLayout.m */; };
 		538D32D71FFE1EEA00DF4C9A /* DWViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 538D32D01FFE1EEA00DF4C9A /* DWViewCell.m */; };
 		538D32D81FFE1EEA00DF4C9A /* HomeTapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538D32D11FFE1EEA00DF4C9A /* HomeTapView.swift */; };
@@ -43,6 +46,9 @@
 		53830436205B6477003ABE37 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		53830438205B6FA5003ABE37 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		5383043A205B708F003ABE37 /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
+		5385831B205B9F20001807C3 /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		5385831E205B9F2B001807C3 /* UITableView+FINAutomaticHeightCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+FINAutomaticHeightCell.swift"; sourceTree = "<group>"; };
+		53858320205B9FA6001807C3 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
 		538D32CD1FFE1EEA00DF4C9A /* DWFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWFlowLayout.h; sourceTree = "<group>"; };
 		538D32CE1FFE1EEA00DF4C9A /* DWFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWFlowLayout.m; sourceTree = "<group>"; };
 		538D32CF1FFE1EEA00DF4C9A /* DWViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWViewCell.h; sourceTree = "<group>"; };
@@ -119,9 +125,26 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		5385831A205B9F20001807C3 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5385831B205B9F20001807C3 /* UITableView+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		5385831D205B9F2B001807C3 /* UITableView+FINAutomaticHeightCell */ = {
+			isa = PBXGroup;
+			children = (
+				5385831E205B9F2B001807C3 /* UITableView+FINAutomaticHeightCell.swift */,
+			);
+			path = "UITableView+FINAutomaticHeightCell";
+			sourceTree = "<group>";
+		};
 		538D32CC1FFE1EEA00DF4C9A /* Vews */ = {
 			isa = PBXGroup;
 			children = (
+				53858320205B9FA6001807C3 /* TitleTableViewCell.swift */,
 				538D32CD1FFE1EEA00DF4C9A /* DWFlowLayout.h */,
 				538D32CE1FFE1EEA00DF4C9A /* DWFlowLayout.m */,
 				538D32CF1FFE1EEA00DF4C9A /* DWViewCell.h */,
@@ -135,6 +158,8 @@
 		538D32D21FFE1EEA00DF4C9A /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				5385831D205B9F2B001807C3 /* UITableView+FINAutomaticHeightCell */,
+				5385831A205B9F20001807C3 /* Extension */,
 				53E24A9C1FFF2DC2002117AF /* Font */,
 				538D32DA1FFE209800DF4C9A /* XZClient.swift */,
 				538D32DC1FFE209800DF4C9A /* XZSetting.swift */,
@@ -317,7 +342,10 @@
 				532469E81FFE2BED00FD3101 /* RootViewController.swift in Sources */,
 				53E24A9B1FFF2A1F002117AF /* HomeSampleView.swift in Sources */,
 				5383043B205B708F003ABE37 /* EditorViewController.swift in Sources */,
+				53858321205B9FA7001807C3 /* TitleTableViewCell.swift in Sources */,
+				5385831F205B9F2B001807C3 /* UITableView+FINAutomaticHeightCell.swift in Sources */,
 				538D32DE1FFE209800DF4C9A /* XZSwiftColor.swift in Sources */,
+				5385831C205B9F20001807C3 /* UITableView+Extension.swift in Sources */,
 				538D32D61FFE1EEA00DF4C9A /* DWFlowLayout.m in Sources */,
 				532150881FF5F9CD00C67F13 /* AppDelegate.swift in Sources */,
 				538D32DD1FFE209800DF4C9A /* XZClient.swift in Sources */,
