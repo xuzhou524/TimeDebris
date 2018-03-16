@@ -31,6 +31,9 @@ class RootViewController: UIViewController {
             make.left.right.bottom.equalTo(self.view)
             make.height.equalTo(120)
         });
+        let addTapAction = UITapGestureRecognizer.init(target: self, action: #selector(RootViewController.homeTapToAddAction))
+        homeTapView.addImageView.addGestureRecognizer(addTapAction)
+        
         let listTapAction = UITapGestureRecognizer.init(target: self, action: #selector(RootViewController.homeTapToListAction))
         homeTapView.liebiaoImageView.addGestureRecognizer(listTapAction)
         
@@ -38,14 +41,16 @@ class RootViewController: UIViewController {
         homeTapView.userImageView.addGestureRecognizer(userTapAction)
     }
     
+    @objc func homeTapToAddAction() {
+        self.navigationController?.pushViewController(EditorViewController(), animated: true)
+    }
+    
     @objc func homeTapToListAction() {
         self.navigationController?.pushViewController(ListViewController(), animated: true)
-        
     }
     
     @objc func homeTapToUserAction() {
         self.navigationController?.pushViewController(UserViewController(), animated: true)
-
     }
     
     override func didReceiveMemoryWarning() {

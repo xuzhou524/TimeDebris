@@ -18,6 +18,7 @@ class HomeTapView: UIView {
         addImageView.layer.cornerRadius = 30;
         addImageView.image = UIImage.init(named: "tianjia")
         addImageView.backgroundColor = XZSwiftColor.white
+        addImageView.isUserInteractionEnabled = true
         return addImageView
     }()
     
