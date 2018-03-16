@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  RootViewController.swift
 //  TimeDebris
 //
 //  Created by gozap on 2017/12/29.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class RootViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,8 +31,15 @@ class ViewController: UIViewController {
             make.left.right.bottom.equalTo(self.view)
             make.height.equalTo(120)
         });
+        let tapAction = UITapGestureRecognizer.init(target: self, action: #selector(RootViewController.hideKeyBoardAction))
+        homeTapView.userImageView.addGestureRecognizer(tapAction)
     }
+    
+    @objc func hideKeyBoardAction() {
+        self.navigationController?.pushViewController(UserViewController(), animated: true)
 
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

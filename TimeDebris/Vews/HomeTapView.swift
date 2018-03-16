@@ -30,6 +30,7 @@ class HomeTapView: UIView {
     let userImageView : UIImageView = {
         let userImageView = UIImageView()
         userImageView.image = UIImage.init(named: "user")
+        userImageView.isUserInteractionEnabled = true
         return userImageView
     }()
 
