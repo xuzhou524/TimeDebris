@@ -24,6 +24,7 @@ class HomeTapView: UIView {
     let liebiaoImageView : UIImageView = {
         let liebiaoImageView = UIImageView()
         liebiaoImageView.image = UIImage.init(named: "liebiao")
+        liebiaoImageView.isUserInteractionEnabled = true
         return liebiaoImageView
     }()
     

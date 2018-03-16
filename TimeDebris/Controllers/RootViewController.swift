@@ -11,7 +11,7 @@ import UIKit
 class RootViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.navigationBar.isHidden = true
         self.view.backgroundColor = XZSwiftColor.xzGlay230
         
         let homeSampleView = HomeSampleView()
@@ -31,11 +31,19 @@ class RootViewController: UIViewController {
             make.left.right.bottom.equalTo(self.view)
             make.height.equalTo(120)
         });
-        let tapAction = UITapGestureRecognizer.init(target: self, action: #selector(RootViewController.hideKeyBoardAction))
-        homeTapView.userImageView.addGestureRecognizer(tapAction)
+        let listTapAction = UITapGestureRecognizer.init(target: self, action: #selector(RootViewController.homeTapToListAction))
+        homeTapView.liebiaoImageView.addGestureRecognizer(listTapAction)
+        
+        let userTapAction = UITapGestureRecognizer.init(target: self, action: #selector(RootViewController.homeTapToUserAction))
+        homeTapView.userImageView.addGestureRecognizer(userTapAction)
     }
     
-    @objc func hideKeyBoardAction() {
+    @objc func homeTapToListAction() {
+        self.navigationController?.pushViewController(ListViewController(), animated: true)
+        
+    }
+    
+    @objc func homeTapToUserAction() {
         self.navigationController?.pushViewController(UserViewController(), animated: true)
 
     }

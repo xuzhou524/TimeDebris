@@ -1,5 +1,5 @@
 //
-//  UserViewController.swift
+//  ListViewController.swift
 //  TimeDebris
 //
 //  Created by gozap on 2018/3/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserViewController: UIViewController {
+class ListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class UserViewController: UIViewController {
         });
         
         let headTapView = UIView()
-        headTapView.backgroundColor = XZSwiftColor.clear
+        headTapView.backgroundColor = XZSwiftColor.white
         self.view.addSubview(headTapView)
         headTapView.snp.makeConstraints({ (make) -> Void in
             make.left.right.top.equalTo(self.view)

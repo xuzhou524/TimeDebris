@@ -16,6 +16,7 @@
 		532469E81FFE2BED00FD3101 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532469E71FFE2BED00FD3101 /* RootViewController.swift */; };
 		533D76F91FFF4D5200EA25A4 /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 533D76F81FFF4D5200EA25A4 /* image.jpg */; };
 		53830437205B6477003ABE37 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53830436205B6477003ABE37 /* UserViewController.swift */; };
+		53830439205B6FA5003ABE37 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53830438205B6FA5003ABE37 /* ListViewController.swift */; };
 		538D32D61FFE1EEA00DF4C9A /* DWFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 538D32CE1FFE1EEA00DF4C9A /* DWFlowLayout.m */; };
 		538D32D71FFE1EEA00DF4C9A /* DWViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 538D32D01FFE1EEA00DF4C9A /* DWViewCell.m */; };
 		538D32D81FFE1EEA00DF4C9A /* HomeTapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538D32D11FFE1EEA00DF4C9A /* HomeTapView.swift */; };
@@ -39,6 +40,7 @@
 		532469E71FFE2BED00FD3101 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		533D76F81FFF4D5200EA25A4 /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
 		53830436205B6477003ABE37 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		53830438205B6FA5003ABE37 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		538D32CD1FFE1EEA00DF4C9A /* DWFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWFlowLayout.h; sourceTree = "<group>"; };
 		538D32CE1FFE1EEA00DF4C9A /* DWFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWFlowLayout.m; sourceTree = "<group>"; };
 		538D32CF1FFE1EEA00DF4C9A /* DWViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWViewCell.h; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			children = (
 				532469E71FFE2BED00FD3101 /* RootViewController.swift */,
 				53830436205B6477003ABE37 /* UserViewController.swift */,
+				53830438205B6FA5003ABE37 /* ListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 			files = (
 				532150901FF5F9CE00C67F13 /* TimeDebris.xcdatamodeld in Sources */,
 				538D32DF1FFE209800DF4C9A /* XZSetting.swift in Sources */,
+				53830439205B6FA5003ABE37 /* ListViewController.swift in Sources */,
 				538D32D71FFE1EEA00DF4C9A /* DWViewCell.m in Sources */,
 				53830437205B6477003ABE37 /* UserViewController.swift in Sources */,
 				532469E81FFE2BED00FD3101 /* RootViewController.swift in Sources */,
