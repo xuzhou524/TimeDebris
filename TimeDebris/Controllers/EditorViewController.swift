@@ -33,13 +33,13 @@ class EditorViewController: UIViewController {
         });
         
         let backImageView = UIImageView()
-        backImageView.backgroundColor = XZSwiftColor.red
+        backImageView.image = UIImage.init(named: "guanbi")
         backImageView.isUserInteractionEnabled = true
         headTapView.addSubview(backImageView)
         backImageView.snp.makeConstraints({ (make) -> Void in
-            make.left.equalTo(headTapView).offset(15)
-            make.centerY.equalTo(headTapView).offset(11)
-            make.width.height.equalTo(28)
+            make.left.equalTo(headTapView).offset(20)
+            make.centerY.equalTo(headTapView).offset(12)
+            make.width.height.equalTo(21)
         });
         let tapAction = UITapGestureRecognizer.init(target: self, action: #selector(UserViewController.backActionClick))
         backImageView.addGestureRecognizer(tapAction)

@@ -84,8 +84,7 @@ class UserHeadTableViewCell: UITableViewCell {
         self.selectionStyle = .none
         
         self.iconImageView = UIImageView();
-        //self.iconImageView?.image = UIImage(named: "arrow_right")
-        self.iconImageView?.backgroundColor = XZSwiftColor.orange
+        self.iconImageView?.image = UIImage(named: "UserHead.jpeg")
         self.contentView.addSubview(self.iconImageView!)
         self.iconImageView?.snp.makeConstraints({ (make) in
             make.top.left.right.bottom.equalTo(self.contentView)
@@ -93,10 +92,11 @@ class UserHeadTableViewCell: UITableViewCell {
         
         self.titleLabel = UILabel()
         self.titleLabel?.text = "拾掇生活中的点滴,记录时光的故事";
+        self.titleLabel?.textColor = XZSwiftColor.xzGlay50
         self.titleLabel?.font = XZClient.XZFont2(size: 16)
         self.contentView.addSubview(self.titleLabel!)
         self.titleLabel?.snp.makeConstraints({ (make) in
-            make.centerY.equalTo(self.contentView).offset(15)
+            make.centerY.equalTo(self.contentView).offset(25)
             make.centerX.equalTo(self.contentView)
         })
     }

@@ -39,14 +39,13 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         });
 
         let backImageView = UIImageView()
-        backImageView.backgroundColor = XZSwiftColor.red
+        backImageView.image = UIImage.init(named: "d_Arrow_left")
         backImageView.isUserInteractionEnabled = true
         headTapView.addSubview(backImageView)
         backImageView.snp.makeConstraints({ (make) -> Void in
             make.left.equalTo(headTapView).offset(15)
-            make.centerY.equalTo(headTapView).offset(11)
-            make.height.equalTo(28)
-            make.width.equalTo(25)
+            make.centerY.equalTo(headTapView).offset(10)
+            make.width.height.equalTo(21)
         });
         
         let titleLabel = UILabel()
