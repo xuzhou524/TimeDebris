@@ -29,6 +29,7 @@
 		53DD73EE2060B3A800C67000 /* arrow_right@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53DD73EC2060B3A800C67000 /* arrow_right@3x.png */; };
 		53DD73EF2060B3A800C67000 /* arrow_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53DD73ED2060B3A800C67000 /* arrow_right@2x.png */; };
 		53DD73F12060B3C600C67000 /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 53DD73F02060B3C600C67000 /* image.jpg */; };
+		53DD73F32060B8F900C67000 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DD73F22060B8F900C67000 /* ListTableViewCell.swift */; };
 		53E24A9B1FFF2A1F002117AF /* HomeSampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E24A9A1FFF2A1F002117AF /* HomeSampleView.swift */; };
 		53E24A9F1FFF2DC2002117AF /* NotoSansHans-DemiLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53E24A9D1FFF2DC2002117AF /* NotoSansHans-DemiLight.otf */; };
 		53E24AA01FFF2DC2002117AF /* NotoSansHans-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53E24A9E1FFF2DC2002117AF /* NotoSansHans-Light.otf */; };
@@ -61,6 +62,7 @@
 		53DD73EC2060B3A800C67000 /* arrow_right@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_right@3x.png"; sourceTree = "<group>"; };
 		53DD73ED2060B3A800C67000 /* arrow_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_right@2x.png"; sourceTree = "<group>"; };
 		53DD73F02060B3C600C67000 /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
+		53DD73F22060B8F900C67000 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		53E24A9A1FFF2A1F002117AF /* HomeSampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSampleView.swift; sourceTree = "<group>"; };
 		53E24A9D1FFF2DC2002117AF /* NotoSansHans-DemiLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansHans-DemiLight.otf"; sourceTree = "<group>"; };
 		53E24A9E1FFF2DC2002117AF /* NotoSansHans-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansHans-Light.otf"; sourceTree = "<group>"; };
@@ -148,13 +150,14 @@
 		538D32CC1FFE1EEA00DF4C9A /* Vews */ = {
 			isa = PBXGroup;
 			children = (
-				53858320205B9FA6001807C3 /* TitleTableViewCell.swift */,
 				538D32CD1FFE1EEA00DF4C9A /* DWFlowLayout.h */,
 				538D32CE1FFE1EEA00DF4C9A /* DWFlowLayout.m */,
 				538D32CF1FFE1EEA00DF4C9A /* DWViewCell.h */,
 				538D32D01FFE1EEA00DF4C9A /* DWViewCell.m */,
 				538D32D11FFE1EEA00DF4C9A /* HomeTapView.swift */,
 				53E24A9A1FFF2A1F002117AF /* HomeSampleView.swift */,
+				53858320205B9FA6001807C3 /* TitleTableViewCell.swift */,
+				53DD73F22060B8F900C67000 /* ListTableViewCell.swift */,
 			);
 			path = Vews;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				53830439205B6FA5003ABE37 /* ListViewController.swift in Sources */,
 				538D32D71FFE1EEA00DF4C9A /* DWViewCell.m in Sources */,
 				53830437205B6477003ABE37 /* UserViewController.swift in Sources */,
+				53DD73F32060B8F900C67000 /* ListTableViewCell.swift in Sources */,
 				532469E81FFE2BED00FD3101 /* RootViewController.swift in Sources */,
 				53E24A9B1FFF2A1F002117AF /* HomeSampleView.swift in Sources */,
 				5383043B205B708F003ABE37 /* EditorViewController.swift in Sources */,

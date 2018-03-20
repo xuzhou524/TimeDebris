@@ -19,7 +19,7 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = XZSwiftColor.white
-        self.navigationController?.hidesBottomBarWhenPushed = true
+        self.navigationController?.navigationBar.isHidden = true
         
         self.tableView.delegate = self
         self.tableView.backgroundColor = XZSwiftColor.convenientBackgroundColor

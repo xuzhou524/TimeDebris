@@ -99,7 +99,6 @@ class UserHeadTableViewCell: UITableViewCell {
             make.centerY.equalTo(self.contentView).offset(15)
             make.centerX.equalTo(self.contentView)
         })
-
     }
 }
 
