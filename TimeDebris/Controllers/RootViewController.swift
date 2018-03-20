@@ -51,11 +51,21 @@ class RootViewController: UIViewController {
     }
     
     @objc func homeTapToListAction() {
-        self.navigationController?.pushViewController(ListViewController(), animated: true)
+        let transition = CATransition()
+        transition.duration = 0.4
+        transition.type = kCATransitionMoveIn
+        transition.subtype = kCATransitionFromLeft
+        self.navigationController?.view.layer.add(transition, forKey: nil)
+        self.navigationController?.pushViewController(ListViewController(), animated: false)
     }
     
     @objc func homeTapToUserAction() {
-        self.navigationController?.pushViewController(UserViewController(), animated: true)
+        let transition = CATransition()
+        transition.duration = 0.4
+        transition.type = kCATransitionMoveIn
+        transition.subtype = kCATransitionFromRight
+        self.navigationController?.view.layer.add(transition, forKey: nil)
+        self.navigationController?.pushViewController(UserViewController(), animated: false)
     }
     
     override func didReceiveMemoryWarning() {
