@@ -42,7 +42,12 @@ class RootViewController: UIViewController {
     }
     
     @objc func homeTapToAddAction() {
-        self.navigationController?.pushViewController(EditorViewController(), animated: true)
+        let transition = CATransition()
+        transition.duration = 0.4
+        transition.type = kCATransitionMoveIn
+        transition.subtype = kCATransitionFromTop
+        self.navigationController?.view.layer.add(transition, forKey: nil)
+        self.navigationController?.pushViewController(EditorViewController(), animated: false)
     }
     
     @objc func homeTapToListAction() {

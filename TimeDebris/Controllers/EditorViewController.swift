@@ -46,7 +46,12 @@ class EditorViewController: UIViewController {
         
     }
     @objc func backActionClick() {
-        self.navigationController?.popViewController(animated: true)
+        let transition = CATransition()
+        transition.duration = 0.4
+        transition.type = kCATransitionPush
+        transition.subtype = kCATransitionFromBottom
+        self.navigationController?.view.layer.add(transition, forKey: nil)
+        self.navigationController?.popViewController(animated: false)
     }
 
     override func didReceiveMemoryWarning() {
