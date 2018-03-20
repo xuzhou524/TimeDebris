@@ -14,7 +14,6 @@
 		532150921FF5F9CE00C67F13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 532150911FF5F9CE00C67F13 /* Assets.xcassets */; };
 		532150951FF5F9CE00C67F13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 532150931FF5F9CE00C67F13 /* LaunchScreen.storyboard */; };
 		532469E81FFE2BED00FD3101 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532469E71FFE2BED00FD3101 /* RootViewController.swift */; };
-		533D76F91FFF4D5200EA25A4 /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 533D76F81FFF4D5200EA25A4 /* image.jpg */; };
 		53830437205B6477003ABE37 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53830436205B6477003ABE37 /* UserViewController.swift */; };
 		53830439205B6FA5003ABE37 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53830438205B6FA5003ABE37 /* ListViewController.swift */; };
 		5383043B205B708F003ABE37 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5383043A205B708F003ABE37 /* EditorViewController.swift */; };
@@ -27,6 +26,9 @@
 		538D32DD1FFE209800DF4C9A /* XZClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538D32DA1FFE209800DF4C9A /* XZClient.swift */; };
 		538D32DE1FFE209800DF4C9A /* XZSwiftColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538D32DB1FFE209800DF4C9A /* XZSwiftColor.swift */; };
 		538D32DF1FFE209800DF4C9A /* XZSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538D32DC1FFE209800DF4C9A /* XZSetting.swift */; };
+		53DD73EE2060B3A800C67000 /* arrow_right@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53DD73EC2060B3A800C67000 /* arrow_right@3x.png */; };
+		53DD73EF2060B3A800C67000 /* arrow_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53DD73ED2060B3A800C67000 /* arrow_right@2x.png */; };
+		53DD73F12060B3C600C67000 /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 53DD73F02060B3C600C67000 /* image.jpg */; };
 		53E24A9B1FFF2A1F002117AF /* HomeSampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E24A9A1FFF2A1F002117AF /* HomeSampleView.swift */; };
 		53E24A9F1FFF2DC2002117AF /* NotoSansHans-DemiLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53E24A9D1FFF2DC2002117AF /* NotoSansHans-DemiLight.otf */; };
 		53E24AA01FFF2DC2002117AF /* NotoSansHans-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53E24A9E1FFF2DC2002117AF /* NotoSansHans-Light.otf */; };
@@ -42,7 +44,6 @@
 		532150941FF5F9CE00C67F13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		532150961FF5F9CE00C67F13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		532469E71FFE2BED00FD3101 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		533D76F81FFF4D5200EA25A4 /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
 		53830436205B6477003ABE37 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		53830438205B6FA5003ABE37 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		5383043A205B708F003ABE37 /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +58,9 @@
 		538D32DA1FFE209800DF4C9A /* XZClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZClient.swift; sourceTree = "<group>"; };
 		538D32DB1FFE209800DF4C9A /* XZSwiftColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZSwiftColor.swift; sourceTree = "<group>"; };
 		538D32DC1FFE209800DF4C9A /* XZSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZSetting.swift; sourceTree = "<group>"; };
+		53DD73EC2060B3A800C67000 /* arrow_right@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_right@3x.png"; sourceTree = "<group>"; };
+		53DD73ED2060B3A800C67000 /* arrow_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_right@2x.png"; sourceTree = "<group>"; };
+		53DD73F02060B3C600C67000 /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
 		53E24A9A1FFF2A1F002117AF /* HomeSampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSampleView.swift; sourceTree = "<group>"; };
 		53E24A9D1FFF2DC2002117AF /* NotoSansHans-DemiLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansHans-DemiLight.otf"; sourceTree = "<group>"; };
 		53E24A9E1FFF2DC2002117AF /* NotoSansHans-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansHans-Light.otf"; sourceTree = "<group>"; };
@@ -98,11 +102,11 @@
 		532150861FF5F9CD00C67F13 /* TimeDebris */ = {
 			isa = PBXGroup;
 			children = (
+				53DD73EB2060B39D00C67000 /* Resources */,
 				532469E61FFE2BED00FD3101 /* Controllers */,
 				538D32D21FFE1EEA00DF4C9A /* Libs */,
 				538D32D51FFE1EEA00DF4C9A /* Model */,
 				538D32CC1FFE1EEA00DF4C9A /* Vews */,
-				533D76F81FFF4D5200EA25A4 /* image.jpg */,
 				532150871FF5F9CD00C67F13 /* AppDelegate.swift */,
 				5321508B1FF5F9CD00C67F13 /* Main.storyboard */,
 				532150911FF5F9CE00C67F13 /* Assets.xcassets */,
@@ -173,6 +177,16 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		53DD73EB2060B39D00C67000 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				53DD73F02060B3C600C67000 /* image.jpg */,
+				53DD73ED2060B3A800C67000 /* arrow_right@2x.png */,
+				53DD73EC2060B3A800C67000 /* arrow_right@3x.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		53E24A9C1FFF2DC2002117AF /* Font */ = {
@@ -265,11 +279,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				532150951FF5F9CE00C67F13 /* LaunchScreen.storyboard in Resources */,
+				53DD73EE2060B3A800C67000 /* arrow_right@3x.png in Resources */,
 				53E24A9F1FFF2DC2002117AF /* NotoSansHans-DemiLight.otf in Resources */,
+				53DD73F12060B3C600C67000 /* image.jpg in Resources */,
 				53E24AA01FFF2DC2002117AF /* NotoSansHans-Light.otf in Resources */,
-				533D76F91FFF4D5200EA25A4 /* image.jpg in Resources */,
 				532150921FF5F9CE00C67F13 /* Assets.xcassets in Resources */,
 				5321508D1FF5F9CD00C67F13 /* Main.storyboard in Resources */,
+				53DD73EF2060B3A800C67000 /* arrow_right@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

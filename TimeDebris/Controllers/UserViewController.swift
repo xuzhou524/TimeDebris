@@ -19,14 +19,15 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = XZSwiftColor.white
-        
-        self.navigationController?.navigationBar.isHidden = true
+        self.navigationController?.hidesBottomBarWhenPushed = true
         
         self.tableView.delegate = self
+        self.tableView.backgroundColor = XZSwiftColor.convenientBackgroundColor
         self.tableView.dataSource = self
         self.view.addSubview(self.tableView)
         self.tableView.snp.makeConstraints({ (make) -> Void in
-            make.left.right.bottom.top.equalTo(self.view)
+            make.top.equalTo(self.view).offset(-20)
+            make.left.right.bottom.equalTo(self.view)
         });
         
         let headTapView = UIView()
@@ -51,6 +52,7 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         backImageView.addGestureRecognizer(tapAction)
         
         regClass(self.tableView, cell: TitleTableViewCell.self)
+        regClass(self.tableView, cell: UserHeadTableViewCell.self)
     }
     
     // MARK: - Table view data source
@@ -59,18 +61,23 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 6
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if (indexPath as NSIndexPath).row == 0 {
             return 170
+        }else if (indexPath as NSIndexPath).row == 1 {
+            return 15
         }
         return 55
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if (indexPath as NSIndexPath).row == 0 {
+            let userHeadCell = getCell(tableView, cell: UserHeadTableViewCell.self, indexPath: indexPath)
+            return userHeadCell
+        }else if (indexPath as NSIndexPath).row == 1 {
             let cell = UITableViewCell()
             cell.backgroundColor = XZSwiftColor.convenientBackgroundColor
             cell.selectionStyle = .none
@@ -79,18 +86,17 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         let baseCell = getCell(tableView, cell: TitleTableViewCell.self, indexPath: indexPath)
         baseCell.clipsToBounds = true
-        baseCell.selectionStyle = .none
         baseCell.iconImageView?.isHidden = false
-        if (indexPath as NSIndexPath).row == 1 {
+        if (indexPath as NSIndexPath).row == 2 {
             baseCell.titleLabel?.text = "新浪微博"
             baseCell.detaileLabel?.text = "徐_Aaron"
-        }else if (indexPath as NSIndexPath).row == 2 {
+        }else if (indexPath as NSIndexPath).row == 3 {
             baseCell.titleLabel?.text = "推荐给贷友"
             baseCell.detaileLabel?.text = ""
-        }else if (indexPath as NSIndexPath).row == 3 {
+        }else if (indexPath as NSIndexPath).row == 4 {
             baseCell.titleLabel?.text = "为你发现"
             baseCell.detaileLabel?.text = ""
-        }else if (indexPath as NSIndexPath).row == 4 {
+        }else if (indexPath as NSIndexPath).row == 5 {
             baseCell.titleLabel?.text = "微印笔记"
             let infoDict = Bundle.main.infoDictionary
             if let info = infoDict {
