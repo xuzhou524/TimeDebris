@@ -32,7 +32,10 @@ class EditorViewController: UIViewController {
     
     let iconImageView : UIImageView = {
         let iconImageView = UIImageView()
-        iconImageView.backgroundColor = XZSwiftColor.orange
+        iconImageView.contentMode = .scaleAspectFill
+        iconImageView.layer.cornerRadius = 5
+        iconImageView.clipsToBounds = true
+        iconImageView.image = UIImage.init(named: "image.jpg")
         return iconImageView
     }()
 
@@ -98,7 +101,7 @@ class EditorViewController: UIViewController {
         });
         
         let calendarImageView = UIImageView()
-        calendarImageView.image = UIImage.init(named: "Calendar_21")?.withRenderingMode(.alwaysTemplate)
+        calendarImageView.image = UIImage.init(named: "Calendar_22")?.withRenderingMode(.alwaysTemplate)
         calendarImageView.tintColor = XZSwiftColor.xzGlay129
         calendarImageView.isUserInteractionEnabled = true
         self.view.addSubview(calendarImageView)
@@ -124,11 +127,14 @@ class EditorViewController: UIViewController {
         
         let saveButton = UIButton()
         //calendarImageView.image = UIImage.init(named: "guanbi")
-        saveButton.backgroundColor = XZSwiftColor.xzGlay129
+        saveButton.backgroundColor = XZSwiftColor.green
+        saveButton.layer.cornerRadius = 20
+        saveButton.setTitle("保存", for: .normal)
+        saveButton.setTitleColor(XZSwiftColor.white, for: .normal)
         self.view.addSubview(saveButton)
         saveButton.snp.makeConstraints({ (make) -> Void in
             make.centerX.equalTo(self.view)
-            make.top.equalTo(self.iconImageView.snp.bottom).offset(25)
+            make.top.equalTo(self.iconImageView.snp.bottom).offset(30)
             make.width.equalTo(200)
             make.height.equalTo(40)
         });
