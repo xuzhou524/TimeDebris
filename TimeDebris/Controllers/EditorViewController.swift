@@ -126,7 +126,6 @@ class EditorViewController: UIViewController {
         });
         
         let saveButton = UIButton()
-        //calendarImageView.image = UIImage.init(named: "guanbi")
         saveButton.backgroundColor = XZSwiftColor.green
         saveButton.layer.cornerRadius = 20
         saveButton.setTitle("保存", for: .normal)
