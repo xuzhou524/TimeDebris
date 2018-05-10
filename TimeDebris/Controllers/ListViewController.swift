@@ -49,7 +49,7 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         });
         
         let titleLabel = UILabel()
-        titleLabel.text = "微印"
+        titleLabel.text = "随时"
         titleLabel.textColor = XZSwiftColor.xzGlay50
         titleLabel.font = XZClient.XZFont2(size: 18)
         headTapView.addSubview(titleLabel)

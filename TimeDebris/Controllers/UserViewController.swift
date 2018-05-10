@@ -96,11 +96,11 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             baseCell.titleLabel?.text = "为你发现"
             baseCell.detaileLabel?.text = ""
         }else if (indexPath as NSIndexPath).row == 5 {
-            baseCell.titleLabel?.text = "微印笔记"
+            baseCell.titleLabel?.text = "随时笔记"
             let infoDict = Bundle.main.infoDictionary
             if let info = infoDict {
                 // app版本
-                let appVersion = info["CFBundleShortVersionString"] as! String!
+                let appVersion = info["CFBundleShortVersionString"] as! String?
                 baseCell.detaileLabel?.text = "v" + appVersion!
                 baseCell.iconImageView?.isHidden = true
             }

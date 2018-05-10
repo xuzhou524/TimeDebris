@@ -60,7 +60,7 @@ class EditorViewController: UIViewController {
         });
         
         let titleLabel = UILabel()
-        titleLabel.text = "留下微印"
+        titleLabel.text = "随时留下"
         titleLabel.textColor = XZSwiftColor.xzGlay50
         titleLabel.font = XZClient.XZFont2(size: 18)
         self.headTapView.addSubview(titleLabel)
@@ -101,7 +101,6 @@ class EditorViewController: UIViewController {
         });
         
         let calendarImageView = UIImageView()
-        calendarImageView.image = UIImage.init(named: "Calendar_22")?.withRenderingMode(.alwaysTemplate)
         calendarImageView.tintColor = XZSwiftColor.xzGlay129
         calendarImageView.isUserInteractionEnabled = true
         self.view.addSubview(calendarImageView)
@@ -110,6 +109,10 @@ class EditorViewController: UIViewController {
             make.top.equalTo(self.titleTextField.snp.bottom).offset(10)
             make.width.height.equalTo(24)
         });
+        let dateFormatter:DateFormatter = DateFormatter();
+        dateFormatter.dateFormat = "dd";
+        let dateString:String = dateFormatter.string(from: Date())
+        calendarImageView.image = UIImage.init(named: "Calendar_" + dateString)?.withRenderingMode(.alwaysTemplate)
         
         self.view.addSubview(self.describeTextView)
         self.describeTextView.snp.makeConstraints({ (make) -> Void in
