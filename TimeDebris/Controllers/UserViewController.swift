@@ -90,7 +90,7 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             baseCell.titleLabel?.text = "新浪微博"
             baseCell.detaileLabel?.text = "徐_Aaron"
         }else if (indexPath as NSIndexPath).row == 3 {
-            baseCell.titleLabel?.text = "推荐给贷友"
+            baseCell.titleLabel?.text = "推荐给记友"
             baseCell.detaileLabel?.text = ""
         }else if (indexPath as NSIndexPath).row == 4 {
             baseCell.titleLabel?.text = "为你发现"

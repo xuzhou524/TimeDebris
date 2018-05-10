@@ -76,7 +76,7 @@ class EditorViewController: UIViewController {
         self.view.addSubview(tapView)
         tapView.snp.makeConstraints({ (make) -> Void in
             make.left.right.bottom.equalTo(self.view)
-            make.height.equalTo(100)
+            make.height.equalTo(130)
         });
         
         let backImageView = UIImageView()
@@ -106,7 +106,7 @@ class EditorViewController: UIViewController {
         self.view.addSubview(calendarImageView)
         calendarImageView.snp.makeConstraints({ (make) -> Void in
             make.left.equalTo(self.titleTextField)
-            make.top.equalTo(self.titleTextField.snp.bottom).offset(10)
+            make.top.equalTo(self.titleTextField.snp.bottom).offset(15)
             make.width.height.equalTo(24)
         });
         let dateFormatter:DateFormatter = DateFormatter();
@@ -117,26 +117,26 @@ class EditorViewController: UIViewController {
         self.view.addSubview(self.describeTextView)
         self.describeTextView.snp.makeConstraints({ (make) -> Void in
             make.left.right.equalTo(self.titleTextField)
-            make.top.equalTo(calendarImageView.snp.bottom).offset(10)
+            make.top.equalTo(calendarImageView.snp.bottom).offset(15)
             make.height.equalTo(50)
         });
         
         self.view.addSubview(self.iconImageView)
         self.iconImageView.snp.makeConstraints({ (make) -> Void in
             make.left.right.equalTo(self.titleTextField)
-            make.top.equalTo(self.describeTextView.snp.bottom).offset(10)
+            make.top.equalTo(self.describeTextView.snp.bottom).offset(15)
             make.height.equalTo(120)
         });
         
         let saveButton = UIButton()
-        saveButton.backgroundColor = XZSwiftColor.green
+        saveButton.backgroundColor = XZSwiftColor.xzGreen_67_205_120
         saveButton.layer.cornerRadius = 20
         saveButton.setTitle("保存", for: .normal)
         saveButton.setTitleColor(XZSwiftColor.white, for: .normal)
         self.view.addSubview(saveButton)
         saveButton.snp.makeConstraints({ (make) -> Void in
             make.centerX.equalTo(self.view)
-            make.top.equalTo(self.iconImageView.snp.bottom).offset(30)
+            make.top.equalTo(self.iconImageView.snp.bottom).offset(40)
             make.width.equalTo(200)
             make.height.equalTo(40)
         });

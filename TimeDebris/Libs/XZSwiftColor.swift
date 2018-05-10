@@ -63,4 +63,12 @@ class XZSwiftColor: UIColor{
             return colorWith255RGB(50, g: 50, b: 50);
         }
     }
+    
+    
+    
+    static var xzGreen_67_205_120 : UIColor{
+        get{
+            return colorWith255RGB(67, g: 205, b: 128);
+        }
+    }
 }
