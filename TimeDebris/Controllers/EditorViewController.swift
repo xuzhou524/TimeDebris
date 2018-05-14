@@ -140,7 +140,12 @@ class EditorViewController: UIViewController {
             make.width.equalTo(200)
             make.height.equalTo(40)
         });
+        saveButton.addTarget(self, action: #selector(EditorViewController.saveClick), for: .touchUpInside)
         
+    }
+    
+    @objc func saveClick(){
+        print("222");
     }
     
     @objc func backActionClick() {
