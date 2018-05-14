@@ -145,7 +145,10 @@ class EditorViewController: UIViewController {
     }
     
     @objc func saveClick(){
-        print("222");
+        let titleStr = self.titleTextField.text
+        let describeStr = self.describeTextView.text
+        
+        print(titleStr! + describeStr!);
     }
     
     @objc func backActionClick() {
