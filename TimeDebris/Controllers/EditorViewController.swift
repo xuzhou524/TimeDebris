@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditorViewController: UIViewController {
+class EditorViewController: UIViewController,UIGestureRecognizerDelegate {
     
     let headTapView : UIView = {
         let headTapView = UIView()
@@ -141,7 +141,9 @@ class EditorViewController: UIViewController {
             make.height.equalTo(40)
         });
         saveButton.addTarget(self, action: #selector(EditorViewController.saveClick), for: .touchUpInside)
-        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(viewTap))
+        self.view.addGestureRecognizer(tap)
+        tap.delegate = self
     }
     
     @objc func saveClick(){
@@ -149,6 +151,10 @@ class EditorViewController: UIViewController {
         let describeStr = self.describeTextView.text
         
         print(titleStr! + describeStr!);
+    }
+    
+    @objc func viewTap(){
+        self.view.endEditing(true)
     }
     
     @objc func backActionClick() {
