@@ -14,6 +14,7 @@
 		532150921FF5F9CE00C67F13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 532150911FF5F9CE00C67F13 /* Assets.xcassets */; };
 		532150951FF5F9CE00C67F13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 532150931FF5F9CE00C67F13 /* LaunchScreen.storyboard */; };
 		532469E81FFE2BED00FD3101 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532469E71FFE2BED00FD3101 /* RootViewController.swift */; };
+		5338F83620B29ED100B6521F /* LoanCacheManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5338F83520B29ED100B6521F /* LoanCacheManage.swift */; };
 		53830437205B6477003ABE37 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53830436205B6477003ABE37 /* UserViewController.swift */; };
 		53830439205B6FA5003ABE37 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53830438205B6FA5003ABE37 /* ListViewController.swift */; };
 		5383043B205B708F003ABE37 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5383043A205B708F003ABE37 /* EditorViewController.swift */; };
@@ -81,6 +82,7 @@
 		532150941FF5F9CE00C67F13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		532150961FF5F9CE00C67F13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		532469E71FFE2BED00FD3101 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		5338F83520B29ED100B6521F /* LoanCacheManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanCacheManage.swift; sourceTree = "<group>"; };
 		53830436205B6477003ABE37 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		53830438205B6FA5003ABE37 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		5383043A205B708F003ABE37 /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 		538D32D51FFE1EEA00DF4C9A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5338F83520B29ED100B6521F /* LoanCacheManage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				532150901FF5F9CE00C67F13 /* TimeDebris.xcdatamodeld in Sources */,
 				538D32DF1FFE209800DF4C9A /* XZSetting.swift in Sources */,
 				53830439205B6FA5003ABE37 /* ListViewController.swift in Sources */,
+				5338F83620B29ED100B6521F /* LoanCacheManage.swift in Sources */,
 				538D32D71FFE1EEA00DF4C9A /* DWViewCell.m in Sources */,
 				53830437205B6477003ABE37 /* UserViewController.swift in Sources */,
 				53DD73F32060B8F900C67000 /* ListTableViewCell.swift in Sources */,

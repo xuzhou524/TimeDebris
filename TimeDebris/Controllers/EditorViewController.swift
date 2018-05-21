@@ -148,9 +148,23 @@ class EditorViewController: UIViewController,UIGestureRecognizerDelegate {
     
     @objc func saveClick(){
         let titleStr = self.titleTextField.text
+        if (titleStr?.Lenght)! > 0 {
+            return
+        }
         let describeStr = self.describeTextView.text
+        if (describeStr?.Lenght)! > 0 {
+            return
+        }
+        self.view.endEditing(true)
         
-        print(titleStr! + describeStr!);
+        let loanModel = LoanCacheManage.init()
+        
+        loanModel.titleStr = self.titleTextField.text
+        loanModel.detailsStr = self.describeTextView.text
+        //loanModel.timeStr = self.loanAmontTextFiled?.text
+        
+        UserDefaults.standard.saveCustomObject(customObject: loanModel, key: "kTMCacheLoanManage")
+        
     }
     
     @objc func viewTap(){
