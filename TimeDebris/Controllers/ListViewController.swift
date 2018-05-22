@@ -9,12 +9,12 @@
 import UIKit
 
 class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
+    var cacheLoanNoteArray: NSMutableArray?
     
     let tableView : UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = XZSwiftColor.xzGlay230
         tableView.separatorStyle = .none
-
         return tableView
     }()
 
@@ -23,11 +23,14 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         self.view.backgroundColor = XZSwiftColor.white
         self.navigationController?.navigationBar.isHidden = true
         
+        self.cacheLoanNoteArray = UserDefaults.standard.getCustomObject(forKey: "kTMCacheLoanManage") as? NSMutableArray
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.view.addSubview(self.tableView)
         self.tableView.snp.makeConstraints({ (make) -> Void in
-            make.left.right.bottom.top.equalTo(self.view)
+            make.top.equalTo(self.view).offset(64)
+            make.left.right.bottom.equalTo(self.view)
         });
         
         let headTapView = UIView()
@@ -62,7 +65,6 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         backImageView.addGestureRecognizer(tapAction)
         
         regClass(self.tableView, cell: ListTableViewCell.self)
-        
     }
     
     // MARK: - Table view data source
@@ -71,12 +73,12 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return (self.cacheLoanNoteArray?.count)!
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 170
+        return 120
 
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -84,6 +86,20 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let userHeadCell = getCell(tableView, cell: ListTableViewCell.self, indexPath: indexPath)
         var colorArray = [XZSwiftColor.brown,XZSwiftColor.orange,XZSwiftColor.red,XZSwiftColor.yellow,XZSwiftColor.green]
         userHeadCell.iconImageView?.backgroundColor = colorArray[indexPath.row]
+        
+        let loanModel = self.cacheLoanNoteArray![indexPath.row] as! LoanCacheManage
+        
+        userHeadCell.titleLabel?.text = loanModel.titleStr
+
+        
+        let timeInterval:TimeInterval = TimeInterval(Int(loanModel.timeStr!)!)
+        let date = Date(timeIntervalSince1970: timeInterval)
+        //格式话输出
+        let dformatter = DateFormatter()
+        dformatter.dateFormat = "yyyy年MM月dd日 HH:mm:ss"
+        
+        userHeadCell.dateLabel?.text = dformatter.string(from: date)
+        
         return userHeadCell
         
     }

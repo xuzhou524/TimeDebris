@@ -48,7 +48,6 @@ class EditorViewController: UIViewController,UIGestureRecognizerDelegate {
         self.setUpHeadView()
         self.setUpEditorView()
         self.setUpToobarView()
-    
     }
     
     func setUpHeadView() {
@@ -148,11 +147,11 @@ class EditorViewController: UIViewController,UIGestureRecognizerDelegate {
     
     @objc func saveClick(){
         let titleStr = self.titleTextField.text
-        if (titleStr?.Lenght)! > 0 {
+        if (titleStr?.Lenght)! <= 0 {
             return
         }
         let describeStr = self.describeTextView.text
-        if (describeStr?.Lenght)! > 0 {
+        if (describeStr?.Lenght)! <= 0 {
             return
         }
         self.view.endEditing(true)
@@ -161,10 +160,18 @@ class EditorViewController: UIViewController,UIGestureRecognizerDelegate {
         
         loanModel.titleStr = self.titleTextField.text
         loanModel.detailsStr = self.describeTextView.text
-        //loanModel.timeStr = self.loanAmontTextFiled?.text
         
-        UserDefaults.standard.saveCustomObject(customObject: loanModel, key: "kTMCacheLoanManage")
+        let timeInterval:TimeInterval = NSDate().timeIntervalSince1970
+        let timeStamp = Int(timeInterval)
+        loanModel.timeStr = String(timeStamp)
         
+        var loanModelArray = UserDefaults.standard.getCustomObject(forKey: "kTMCacheLoanManage") as? NSMutableArray
+        if (loanModelArray == nil) {
+            loanModelArray = NSMutableArray()
+        }
+        loanModelArray?.add(loanModel)
+        
+        UserDefaults.standard.saveCustomObject(customObject: loanModelArray!, key: "kTMCacheLoanManage")
     }
     
     @objc func viewTap(){
