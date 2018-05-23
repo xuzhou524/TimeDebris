@@ -11,13 +11,13 @@ import UIKit
 class HomeTapView: UIView {
     let addImageView : UIImageView = {
         let addImageView = UIImageView()
-        addImageView.layer.shadowOpacity = 0.8
-        addImageView.layer.shadowColor = XZSwiftColor.xzGlay129.cgColor
+        addImageView.layer.shadowOpacity = 0.5
+        addImageView.layer.shadowColor = XZSwiftColor.generalOverallColor.cgColor
         addImageView.layer.shadowOffset = CGSize(width: 0, height: 0)
-        addImageView.layer.shadowRadius = 5
-        addImageView.layer.cornerRadius = 30;
-        addImageView.image = UIImage.init(named: "tianjia")
-        addImageView.backgroundColor = XZSwiftColor.white
+        addImageView.layer.shadowRadius = 2
+        addImageView.layer.cornerRadius = 27;
+        addImageView.image = UIImage.init(named: "tianjia")?.withRenderingMode(.alwaysTemplate)
+        addImageView.tintColor = XZSwiftColor.generalOverallColor
         addImageView.isUserInteractionEnabled = true
         return addImageView
     }()
@@ -44,7 +44,7 @@ class HomeTapView: UIView {
         addImageView.snp.makeConstraints({ (make) -> Void in
             make.bottom.equalTo(self).offset(-35)
             make.centerX.equalTo(self)
-            make.width.height.equalTo(55)
+            make.width.height.equalTo(54)
         });
         
         self.addSubview(liebiaoImageView)

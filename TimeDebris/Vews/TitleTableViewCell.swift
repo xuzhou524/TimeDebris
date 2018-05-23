@@ -12,6 +12,7 @@ class TitleTableViewCell: UITableViewCell {
     var titleLabel: UILabel?
     var detaileLabel: UILabel?
     var iconImageView: UIImageView?
+    var linView : UIView?
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -28,6 +29,7 @@ class TitleTableViewCell: UITableViewCell {
         self.titleLabel = UILabel()
         self.titleLabel?.text = "用易房贷";
         self.titleLabel?.font = XZClient.XZFont2(size: 15)
+        self.titleLabel?.textColor = XZSwiftColor.backgroundColor
         self.contentView.addSubview(self.titleLabel!)
         self.titleLabel?.snp.makeConstraints({ (make) in
             make.centerY.equalTo(self.contentView)
@@ -40,7 +42,7 @@ class TitleTableViewCell: UITableViewCell {
         self.iconImageView?.snp.makeConstraints({ (make) in
             make.centerY.equalTo(self.contentView)
             make.right.equalTo(self.contentView).offset(-15)
-            make.height.equalTo(15)
+            make.height.equalTo(12)
             make.width.equalTo(12)
         })
         
@@ -55,11 +57,11 @@ class TitleTableViewCell: UITableViewCell {
             make.centerY.equalTo(self.contentView)
         });
         
-        let linView = UIView()
-        linView.backgroundColor = XZSwiftColor.xzGlay230
-        self.contentView.addSubview(linView)
-        linView.snp.makeConstraints { (make) -> Void in
-            make.height.equalTo(0.5);
+        self.linView = UIView()
+        self.linView?.backgroundColor = XZSwiftColor.xzGlay230
+        self.contentView.addSubview(self.linView!)
+        self.linView?.snp.makeConstraints { (make) -> Void in
+            make.height.equalTo(0.4);
             make.right.equalTo(self.contentView)
             make.left.equalTo(self.contentView).offset(15)
             make.bottom.equalTo(self.contentView)

@@ -128,10 +128,10 @@ class EditorViewController: UIViewController,UIGestureRecognizerDelegate {
         });
         
         let saveButton = UIButton()
-        saveButton.backgroundColor = XZSwiftColor.xzGreen_67_205_120
+        saveButton.backgroundColor = XZSwiftColor.backgroundColor
         saveButton.layer.cornerRadius = 20
         saveButton.setTitle("保存", for: .normal)
-        saveButton.setTitleColor(XZSwiftColor.white, for: .normal)
+        saveButton.setTitleColor(XZSwiftColor.generalOverallColor, for: .normal)
         self.view.addSubview(saveButton)
         saveButton.snp.makeConstraints({ (make) -> Void in
             make.centerX.equalTo(self.view)
