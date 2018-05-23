@@ -73,6 +73,9 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if self.cacheLoanNoteArray == nil {
+            return 0
+        }
         return (self.cacheLoanNoteArray?.count)!
     }
     
