@@ -13,14 +13,14 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     let tableView : UITableView = {
         let tableView = UITableView()
-        tableView.backgroundColor = XZSwiftColor.xzGlay230
+        tableView.backgroundColor = XZSwiftColor.backgroundColor
         tableView.separatorStyle = .none
         return tableView
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = XZSwiftColor.white
+        self.view.backgroundColor = XZSwiftColor.backgroundColor
         self.navigationController?.navigationBar.isHidden = true
         
         self.cacheLoanNoteArray = UserDefaults.standard.getCustomObject(forKey: "kTMCacheLoanManage") as? NSMutableArray
@@ -34,7 +34,7 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         });
         
         let headTapView = UIView()
-        headTapView.backgroundColor = XZSwiftColor.white
+        headTapView.backgroundColor = XZSwiftColor.backgroundColor
         self.view.addSubview(headTapView)
         headTapView.snp.makeConstraints({ (make) -> Void in
             make.left.right.top.equalTo(self.view)
@@ -42,18 +42,19 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         });
 
         let backImageView = UIImageView()
-        backImageView.image = UIImage.init(named: "d_Arrow_left")
+        backImageView.image = UIImage.init(named: "d_Arrow_left")?.withRenderingMode(.alwaysTemplate)
+        backImageView.tintColor = XZSwiftColor.generalOverallColor
         backImageView.isUserInteractionEnabled = true
         headTapView.addSubview(backImageView)
         backImageView.snp.makeConstraints({ (make) -> Void in
             make.left.equalTo(headTapView).offset(15)
             make.centerY.equalTo(headTapView).offset(10)
-            make.width.height.equalTo(21)
+            make.width.height.equalTo(18)
         });
         
         let titleLabel = UILabel()
         titleLabel.text = "随时"
-        titleLabel.textColor = XZSwiftColor.xzGlay50
+        titleLabel.textColor = XZSwiftColor.generalOverallColor
         titleLabel.font = XZClient.XZFont2(size: 18)
         headTapView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints({ (make) -> Void in
@@ -93,13 +94,12 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let loanModel = self.cacheLoanNoteArray![indexPath.row] as! LoanCacheManage
         
         userHeadCell.titleLabel?.text = loanModel.titleStr
-
         
         let timeInterval:TimeInterval = TimeInterval(Int(loanModel.timeStr!)!)
         let date = Date(timeIntervalSince1970: timeInterval)
         //格式话输出
         let dformatter = DateFormatter()
-        dformatter.dateFormat = "yyyy年MM月dd日 HH:mm:ss"
+        dformatter.dateFormat = "yyyy年MM月dd日 HH:mm"
         
         userHeadCell.dateLabel?.text = dformatter.string(from: date)
         

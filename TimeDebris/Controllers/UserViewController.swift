@@ -12,7 +12,7 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 
     let tableView : UITableView = {
         let tableView = UITableView()
-        tableView.backgroundColor = XZSwiftColor.xzGlay230
+        tableView.backgroundColor = XZSwiftColor.white
         tableView.separatorStyle = .none
         return tableView
     }()
@@ -22,7 +22,6 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         self.navigationController?.navigationBar.isHidden = true
         
         self.tableView.delegate = self
-        self.tableView.backgroundColor = XZSwiftColor.convenientBackgroundColor
         self.tableView.dataSource = self
         self.view.addSubview(self.tableView)
         self.tableView.snp.makeConstraints({ (make) -> Void in
@@ -45,7 +44,7 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         backImageView.snp.makeConstraints({ (make) -> Void in
             make.left.equalTo(headTapView).offset(15)
             make.centerY.equalTo(headTapView).offset(10)
-            make.width.height.equalTo(21)
+            make.width.height.equalTo(18)
         });
         let tapAction = UITapGestureRecognizer.init(target: self, action: #selector(UserViewController.backActionClick))
         backImageView.addGestureRecognizer(tapAction)
@@ -78,7 +77,7 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             return userHeadCell
         }else if (indexPath as NSIndexPath).row == 1 {
             let cell = UITableViewCell()
-            cell.backgroundColor = XZSwiftColor.convenientBackgroundColor
+            cell.backgroundColor = XZSwiftColor.white
             cell.selectionStyle = .none
             return cell
         }

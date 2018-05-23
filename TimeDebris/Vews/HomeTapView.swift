@@ -24,14 +24,16 @@ class HomeTapView: UIView {
     
     let liebiaoImageView : UIImageView = {
         let liebiaoImageView = UIImageView()
-        liebiaoImageView.image = UIImage.init(named: "liebiao")
+        liebiaoImageView.image = UIImage.init(named: "liebiao")?.withRenderingMode(.alwaysTemplate)
+        liebiaoImageView.tintColor = XZSwiftColor.generalOverallColor
         liebiaoImageView.isUserInteractionEnabled = true
         return liebiaoImageView
     }()
     
     let userImageView : UIImageView = {
         let userImageView = UIImageView()
-        userImageView.image = UIImage.init(named: "user")
+        userImageView.image = UIImage.init(named: "user")?.withRenderingMode(.alwaysTemplate)
+        userImageView.tintColor = XZSwiftColor.generalOverallColor
         userImageView.isUserInteractionEnabled = true
         return userImageView
     }()
@@ -40,9 +42,9 @@ class HomeTapView: UIView {
         super.init(frame: CGRect(x: 0, y: 0, width: XZClient.ScreenWidth(), height: 80))
         self.addSubview(addImageView)
         addImageView.snp.makeConstraints({ (make) -> Void in
-            make.bottom.equalTo(self).offset(-45)
+            make.bottom.equalTo(self).offset(-35)
             make.centerX.equalTo(self)
-            make.width.height.equalTo(60)
+            make.width.height.equalTo(55)
         });
         
         self.addSubview(liebiaoImageView)
