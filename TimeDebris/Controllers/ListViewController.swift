@@ -20,7 +20,7 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = XZSwiftColor.backgroundColor
+        self.view.backgroundColor = XZSwiftColor.black
         self.navigationController?.navigationBar.isHidden = true
         
         self.cacheLoanNoteArray = UserDefaults.standard.getCustomObject(forKey: "kTMCacheLoanManage") as? NSMutableArray
@@ -81,10 +81,9 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
         return 120
-
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let userHeadCell = getCell(tableView, cell: ListTableViewCell.self, indexPath: indexPath)

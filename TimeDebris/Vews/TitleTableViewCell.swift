@@ -48,7 +48,7 @@ class TitleTableViewCell: UITableViewCell {
         
         self.detaileLabel = UILabel()
         self.detaileLabel?.text = "v1.0.0"
-        self.detaileLabel?.textColor = XZSwiftColor.xzGlay129
+        self.detaileLabel?.textColor = XZSwiftColor.backgroundColor
         self.detaileLabel?.font = XZClient.XZFont2(size: 15)
         self.detaileLabel?.textAlignment = .right;
         self.contentView.addSubview(self.detaileLabel!)
@@ -94,7 +94,7 @@ class UserHeadTableViewCell: UITableViewCell {
         
         self.titleLabel = UILabel()
         self.titleLabel?.text = "拾掇生活中的点滴,记录时光的故事";
-        self.titleLabel?.textColor = XZSwiftColor.xzGlay50
+        self.titleLabel?.textColor = XZSwiftColor.backgroundColor
         self.titleLabel?.font = XZClient.XZFont2(size: 16)
         self.contentView.addSubview(self.titleLabel!)
         self.titleLabel?.snp.makeConstraints({ (make) in

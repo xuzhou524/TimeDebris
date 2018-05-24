@@ -48,7 +48,7 @@ class XZSwiftColor: UIColor{
     
     static var generalOverallColor : UIColor{
         get{
-            return colorWith255RGB(191 ,g: 183, b: 168);
+            return colorWith255RGB(255 ,g: 255, b: 255);
         }
     }
     
@@ -57,24 +57,5 @@ class XZSwiftColor: UIColor{
             return colorWith255RGB(230, g: 230, b: 230);
         }
     }
-
-    static var xzGlay129 : UIColor{
-        get{
-            return colorWith255RGB(129, g: 129, b: 129);
-        }
-    }
     
-    static var xzGlay50 : UIColor{
-        get{
-            return colorWith255RGB(50, g: 50, b: 50);
-        }
-    }
-    
-    
-    
-    static var xzGreen_67_205_120 : UIColor{
-        get{
-            return colorWith255RGB(67, g: 205, b: 128);
-        }
-    }
 }

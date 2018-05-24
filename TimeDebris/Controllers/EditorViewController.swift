@@ -60,7 +60,7 @@ class EditorViewController: UIViewController,UIGestureRecognizerDelegate {
         
         let titleLabel = UILabel()
         titleLabel.text = "随时留下"
-        titleLabel.textColor = XZSwiftColor.xzGlay50
+        titleLabel.textColor = XZSwiftColor.backgroundColor
         titleLabel.font = XZClient.XZFont2(size: 18)
         self.headTapView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints({ (make) -> Void in
@@ -79,7 +79,8 @@ class EditorViewController: UIViewController,UIGestureRecognizerDelegate {
         });
         
         let backImageView = UIImageView()
-        backImageView.image = UIImage.init(named: "guanbi")
+        backImageView.image = UIImage.init(named: "guanbi")?.withRenderingMode(.alwaysTemplate)
+        backImageView.tintColor = XZSwiftColor.backgroundColor
         backImageView.isUserInteractionEnabled = true
         tapView.addSubview(backImageView)
         backImageView.snp.makeConstraints({ (make) -> Void in
@@ -100,7 +101,7 @@ class EditorViewController: UIViewController,UIGestureRecognizerDelegate {
         });
         
         let calendarImageView = UIImageView()
-        calendarImageView.tintColor = XZSwiftColor.xzGlay129
+        calendarImageView.tintColor = XZSwiftColor.backgroundColor
         calendarImageView.isUserInteractionEnabled = true
         self.view.addSubview(calendarImageView)
         calendarImageView.snp.makeConstraints({ (make) -> Void in
