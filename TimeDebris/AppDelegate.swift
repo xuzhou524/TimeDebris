@@ -53,9 +53,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 {
                 case SSDKPlatformType.typeSinaWeibo:
                     //设置新浪微博应用信息,其中authType设置为使用SSO＋Web形式授权
-                    appInfo?.ssdkSetupSinaWeibo(byAppKey: "3112753426",
-                                                appSecret: "8d827d8c5849b1d763f2d077d20e109e",
-                                                redirectUri: "http://www.sharesdk.cn",
+                    appInfo?.ssdkSetupSinaWeibo(byAppKey: "1441746236",
+                                                appSecret: "951595d9acfde36fd04913b9bae3260a",
+                                                redirectUri: "https://www.gezhipu.com",
                                                 authType: SSDKAuthTypeBoth)
                     
                 case SSDKPlatformType.typeWechat:
@@ -64,8 +64,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                              appSecret: "13cbbcc3af24d269bb36683a487d6a83")
                 case SSDKPlatformType.typeQQ:
                     //设置QQ应用信息
-                    appInfo?.ssdkSetupQQ(byAppId: "1106322229",
-                                         appKey: "8VdCCqTx3ZaVovun",
+                    appInfo?.ssdkSetupQQ(byAppId: "1106852885",
+                                         appKey: "NY7HvEFYIZardwn9",
                                          authType: SSDKAuthTypeBoth)
                 default:
                     break

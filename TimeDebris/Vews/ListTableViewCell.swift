@@ -26,7 +26,6 @@ class ListTableViewCell: UITableViewCell {
         self.selectionStyle = .none
         
         self.iconImageView = UIImageView();
-        //self.iconImageView?.image = UIImage(named: "arrow_right")
         self.iconImageView?.backgroundColor = XZSwiftColor.orange
         self.contentView.addSubview(self.iconImageView!)
         self.iconImageView?.snp.makeConstraints({ (make) in
