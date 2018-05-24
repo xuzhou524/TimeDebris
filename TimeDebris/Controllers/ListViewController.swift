@@ -74,16 +74,35 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if self.cacheLoanNoteArray == nil {
-            return 0
+            return 1
         }
         return (self.cacheLoanNoteArray?.count)!
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if self.cacheLoanNoteArray == nil {
+            return 350
+        }
         return 120
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if self.cacheLoanNoteArray == nil {
+            
+            let cell: UITableViewCell? = UITableViewCell.init(style: .default, reuseIdentifier: "nullCell")
+            cell?.selectionStyle = UITableViewCellSelectionStyle.none
+            cell?.contentView.backgroundColor = XZSwiftColor.backgroundColor
+            
+            let label = UILabel()
+            label.font = XZClient.XZFont2(size: 15)
+            label.textColor = XZSwiftColor.white
+            label.text = " - 记录生活 记录美 -"
+            cell?.contentView.addSubview(label)
+            label.snp.makeConstraints({ (make) -> Void in
+                make.center.equalTo((cell?.contentView)!)
+            });
+            return cell!
+        }
         
         let userHeadCell = getCell(tableView, cell: ListTableViewCell.self, indexPath: indexPath)
         var colorArray = [XZSwiftColor.brown,XZSwiftColor.orange,XZSwiftColor.red,XZSwiftColor.yellow,XZSwiftColor.green]
