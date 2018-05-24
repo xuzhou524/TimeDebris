@@ -51,6 +51,7 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         regClass(self.tableView, cell: TitleTableViewCell.self)
         regClass(self.tableView, cell: UserHeadTableViewCell.self)
+        regClass(self.tableView, cell: More_InterTableViewCell.self)
     }
     
     // MARK: - Table view data source
@@ -59,13 +60,15 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return 7
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if (indexPath as NSIndexPath).row == 0 {
-            return 180
+            return 200
         }else if (indexPath as NSIndexPath).row == 1 {
+            return 110
+        }else if (indexPath as NSIndexPath).row == 2 {
             return 15
         }
         return 55
@@ -76,6 +79,12 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             let userHeadCell = getCell(tableView, cell: UserHeadTableViewCell.self, indexPath: indexPath)
             return userHeadCell
         }else if (indexPath as NSIndexPath).row == 1 {
+            let interCell = getCell(tableView, cell: More_InterTableViewCell.self, indexPath: indexPath)
+            interCell.zanImageView?.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(UserViewController.zanImageViewTap)))
+            interCell.tuImageView?.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(UserViewController.tuImageView)))
+            interCell.selectionStyle = .none
+            return interCell
+        }else if (indexPath as NSIndexPath).row == 2 {
             let cell = UITableViewCell()
             cell.backgroundColor = XZSwiftColor.white
             cell.selectionStyle = .none
@@ -85,16 +94,16 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let baseCell = getCell(tableView, cell: TitleTableViewCell.self, indexPath: indexPath)
         baseCell.clipsToBounds = true
         baseCell.iconImageView?.isHidden = false
-        if (indexPath as NSIndexPath).row == 2 {
+        if (indexPath as NSIndexPath).row == 3 {
             baseCell.titleLabel?.text = "新浪微博"
             baseCell.detaileLabel?.text = "徐_Aaron"
-        }else if (indexPath as NSIndexPath).row == 3 {
+        }else if (indexPath as NSIndexPath).row == 4 {
             baseCell.titleLabel?.text = "推荐给记友"
             baseCell.detaileLabel?.text = ""
-        }else if (indexPath as NSIndexPath).row == 4 {
-            baseCell.titleLabel?.text = "为你发现"
-            baseCell.detaileLabel?.text = ""
         }else if (indexPath as NSIndexPath).row == 5 {
+            baseCell.titleLabel?.text = "开发者app集锦"
+            baseCell.detaileLabel?.text = ""
+        }else if (indexPath as NSIndexPath).row == 6 {
             baseCell.titleLabel?.text = "随时笔记"
             let infoDict = Bundle.main.infoDictionary
             if let info = infoDict {
@@ -107,6 +116,63 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         return baseCell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 4 {
+            self.share()
+        }else if indexPath.row == 5 {
+            let friendVC = FriendshipRecommenViewController()
+            self.navigationController?.pushViewController(friendVC, animated: true);
+        }
+    }
+    
+    func share()  {
+        // 1.创建分享参数
+        let shareParames = NSMutableDictionary()
+        shareParames.ssdkSetupShareParams(byText: "拾掇生活中的点滴,记录时光的故事" + "  http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=1272033544&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8",
+                                          images : UIImage(named: "Icon-60"),
+                                          url : NSURL(string:"http://www.xzzai.com") as URL?,
+                                          title : "随时笔记",
+                                          type : SSDKContentType.auto)
+        
+        SSUIShareActionSheetStyle.setShareActionSheetStyle(.simple)
+        //2.进行分享
+        _ = ShareSDK.showShareActionSheet(nil, items: nil, shareParams: shareParames) { (state : SSDKResponseState, platformType : SSDKPlatformType, userdata : [AnyHashable : Any]?, contentEnity : SSDKContentEntity?, error : Error?, end) in
+            
+            switch state{
+                
+            case SSDKResponseState.success: print("分享成功")
+            case SSDKResponseState.fail:    print("分享失败,错误描述:\(String(describing: error))")
+            case SSDKResponseState.cancel:  print("分享取消")
+                
+            default:
+                break
+            }
+        }
+    }
+    
+    @objc func zanImageViewTap(){
+        if #available(iOS 10.3, *) {
+            #if DEBUG
+            #else
+            SKStoreReviewController.requestReview()
+            #endif
+        }else if #available(iOS 10.0, *) {
+            UIApplication.shared.open(URL(string:"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=1272033544&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8")!, options: [:], completionHandler: nil)
+        } else {
+            let urlString = "http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=1272033544&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8"
+            let url = NSURL(string: urlString)
+            UIApplication.shared.openURL(url! as URL)
+        }
+    }
+    @objc func tuImageView(){
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(URL(string:"mqq://im/chat?chat_type=wpa&uin=1043037904&version=1&src_type=web")!, options: [:], completionHandler: nil)
+        } else {
+            let urlString = "mqq://im/chat?chat_type=wpa&uin=1043037904&version=1&src_type=web"
+            let url = NSURL(string: urlString)
+            UIApplication.shared.openURL(url! as URL)
+        }
+    }
     
     @objc func backActionClick() {
         self.navigationController?.popViewController(animated: true)

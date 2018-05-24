@@ -1,29 +1,34 @@
 //
-//  ListViewController.swift
-//  TimeDebris
+//  FriendshipRecommenViewController.swift
+//  MortgageCalculator-Swift
 //
-//  Created by gozap on 2018/3/16.
-//  Copyright © 2018年 com.longdai. All rights reserved.
+//  Created by gozap on 2017/9/11.
+//  Copyright © 2017年 com.longdai. All rights reserved.
 //
 
 import UIKit
 
-class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
-    var cacheLoanNoteArray: NSMutableArray?
-    
+import Crashlytics
+
+class FriendshipRecommenViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+
     let tableView : UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = XZSwiftColor.backgroundColor
         tableView.separatorStyle = .none
         return tableView
     }()
-
+    
+    let iconArray = ["longdai","v2ex","fangdai","onePai","lanyamao","tianqi"]
+    let appUrlArray = ["https://itunes.apple.com/cn/app/id900365369?mt=8",
+                       "https://itunes.apple.com/cn/app/id1078157349?mt=8",
+                       "https://itunes.apple.com/cn/app/id1272033544?mt=8",
+                       "https://itunes.apple.com/cn/app/id1239242152?mt=8",
+                       "https://itunes.apple.com/cn/app/id1116575370?mt=8",
+                       "https://itunes.apple.com/cn/app/id1107521185?mt=8"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = XZSwiftColor.black
-        self.navigationController?.navigationBar.isHidden = true
-        
-        self.cacheLoanNoteArray = UserDefaults.standard.getCustomObject(forKey: "kTMCacheLoanManage") as? NSMutableArray
         
         let headTapView = UIView()
         headTapView.backgroundColor = XZSwiftColor.backgroundColor
@@ -32,7 +37,7 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             make.left.right.top.equalTo(self.view)
             make.height.equalTo(64)
         });
-
+        
         let backImageView = UIImageView()
         backImageView.image = UIImage.init(named: "d_Arrow_left")?.withRenderingMode(.alwaysTemplate)
         backImageView.tintColor = XZSwiftColor.generalOverallColor
@@ -45,7 +50,7 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         });
         
         let titleLabel = UILabel()
-        titleLabel.text = "随时"
+        titleLabel.text = "开发者app集锦"
         titleLabel.textColor = XZSwiftColor.generalOverallColor
         titleLabel.font = XZClient.XZFont2(size: 18)
         headTapView.addSubview(titleLabel)
@@ -64,53 +69,37 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             make.left.right.bottom.equalTo(self.view)
         });
         
-        regClass(self.tableView, cell: ListTableViewCell.self)
+        regClass(self.tableView, cell: FriendshipTableViewCell.self)
     }
-    
-    // MARK: - Table view data source
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if self.cacheLoanNoteArray == nil {
-            return 0
-        }
-        return (self.cacheLoanNoteArray?.count)!
+        return self.iconArray.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return 0.4 * XZClient.ScreenWidth() + 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let userHeadCell = getCell(tableView, cell: ListTableViewCell.self, indexPath: indexPath)
-        var colorArray = [XZSwiftColor.brown,XZSwiftColor.orange,XZSwiftColor.red,XZSwiftColor.yellow,XZSwiftColor.green]
-        userHeadCell.iconImageView?.backgroundColor = colorArray[indexPath.row]
-        
-        let loanModel = self.cacheLoanNoteArray![indexPath.row] as! LoanCacheManage
-        
-        userHeadCell.titleLabel?.text = loanModel.titleStr
-        
-        let timeInterval:TimeInterval = TimeInterval(Int(loanModel.timeStr!)!)
-        let date = Date(timeIntervalSince1970: timeInterval)
-        //格式话输出
-        let dformatter = DateFormatter()
-        dformatter.dateFormat = "yyyy年MM月dd日 HH:mm"
-        
-        userHeadCell.dateLabel?.text = dformatter.string(from: date)
-        
-        return userHeadCell
-        
+        let friendshipCell = getCell(tableView, cell: FriendshipTableViewCell.self, indexPath: indexPath)
+        friendshipCell.selectionStyle = .none
+        friendshipCell.iconImageView?.image = UIImage.init(named: self.iconArray[indexPath.row])
+        return friendshipCell
     }
     
-    @objc func backActionClick() {
-        self.navigationController?.popViewController(animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        Answers.logCustomEvent(withName: self.iconArray[indexPath.row], customAttributes: [:])
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(URL(string:self.appUrlArray[indexPath.row])!, options: [:], completionHandler: nil)
+        } else {
+            let urlString = self.appUrlArray[indexPath.row]
+            let url = NSURL(string: urlString)
+            UIApplication.shared.openURL(url! as URL)
+        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
 }
