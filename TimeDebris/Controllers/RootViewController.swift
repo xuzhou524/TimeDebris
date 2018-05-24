@@ -18,10 +18,10 @@ class RootViewController: UIViewController {
         homeSampleView.backgroundColor = XZSwiftColor.white
         self.view.addSubview(homeSampleView)
         homeSampleView.snp.makeConstraints({ (make) -> Void in
-            make.top.equalTo(self.view).offset(100);
+            make.top.equalTo(self.view).offset(105);
             make.left.equalTo(self.view).offset(40)
             make.right.equalTo(self.view).offset(-40)
-            make.bottom.equalTo(self.view).offset(-140)
+            make.bottom.equalTo(self.view).offset(-145)
         });
         
         let homeTapView = HomeTapView()

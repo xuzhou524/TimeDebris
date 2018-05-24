@@ -15,7 +15,7 @@ class HomeTapView: UIView {
         addImageView.layer.shadowColor = XZSwiftColor.generalOverallColor.cgColor
         addImageView.layer.shadowOffset = CGSize(width: 0, height: 0)
         addImageView.layer.shadowRadius = 2
-        addImageView.layer.cornerRadius = 27;
+        addImageView.layer.cornerRadius = 25;
         addImageView.image = UIImage.init(named: "tianjia")?.withRenderingMode(.alwaysTemplate)
         addImageView.tintColor = XZSwiftColor.generalOverallColor
         addImageView.isUserInteractionEnabled = true
@@ -44,7 +44,7 @@ class HomeTapView: UIView {
         addImageView.snp.makeConstraints({ (make) -> Void in
             make.bottom.equalTo(self).offset(-35)
             make.centerX.equalTo(self)
-            make.width.height.equalTo(54)
+            make.width.height.equalTo(50)
         });
         
         self.addSubview(liebiaoImageView)

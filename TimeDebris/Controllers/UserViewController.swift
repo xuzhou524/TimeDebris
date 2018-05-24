@@ -38,7 +38,8 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         });
         
         let backImageView = UIImageView()
-        backImageView.image = UIImage.init(named: "d_Arrow_left")
+        backImageView.image = UIImage.init(named: "d_Arrow_left")?.withRenderingMode(.alwaysTemplate)
+        backImageView.tintColor = XZSwiftColor.white
         backImageView.isUserInteractionEnabled = true
         headTapView.addSubview(backImageView)
         backImageView.snp.makeConstraints({ (make) -> Void in
