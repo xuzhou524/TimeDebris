@@ -11,7 +11,7 @@ import UIKit
 import Crashlytics
 
 class FriendshipRecommenViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-
+    
     let tableView : UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = XZSwiftColor.backgroundColor

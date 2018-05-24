@@ -9,7 +9,12 @@
 import UIKit
 
 class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UIApplication.shared.statusBarStyle = .lightContent
+    }
+    
     let tableView : UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = XZSwiftColor.white

@@ -38,6 +38,11 @@ class EditorViewController: UIViewController,UIGestureRecognizerDelegate {
         iconImageView.image = UIImage.init(named: "image.jpg")
         return iconImageView
     }()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UIApplication.shared.statusBarStyle = .default
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
