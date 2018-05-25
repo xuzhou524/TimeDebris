@@ -101,7 +101,7 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             let label = UILabel()
             label.font = XZClient.XZFont2(size: 15)
             label.textColor = XZSwiftColor.white
-            label.text = " - 记录生活 记录美 -"
+            label.text = " - 随时记录生活 记录美 -"
             cell?.contentView.addSubview(label)
             label.snp.makeConstraints({ (make) -> Void in
                 make.center.equalTo((cell?.contentView)!)
