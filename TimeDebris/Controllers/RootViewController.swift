@@ -16,6 +16,7 @@ class RootViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Thread.sleep(forTimeInterval: 3.0)
         self.navigationController?.navigationBar.isHidden = true
         self.view.backgroundColor = XZSwiftColor.backgroundColor
         
