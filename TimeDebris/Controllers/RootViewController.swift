@@ -29,6 +29,17 @@ class RootViewController: UIViewController {
             make.bottom.equalTo(self.view).offset(-145)
         });
         
+        let appNameImageView = UIImageView()
+        appNameImageView.image = UIImage.init(named: "appName")
+        appNameImageView.isUserInteractionEnabled = true
+        self.view.addSubview(appNameImageView)
+        appNameImageView.snp.makeConstraints({ (make) -> Void in
+            make.bottom.equalTo(homeSampleView.snp.top).offset(-30);
+            make.left.equalTo(homeSampleView)
+            make.width.equalTo(95)
+            make.height.equalTo(22)
+        });
+        
         let homeTapView = HomeTapView()
         homeTapView.backgroundColor = XZSwiftColor.backgroundColor
         self.view.addSubview(homeTapView)
