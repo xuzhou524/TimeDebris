@@ -10,6 +10,7 @@ import UIKit
 
 class ListTableViewCell: UITableViewCell {
     var titleLabel: UILabel?
+    var summeryLabel : UILabel?
     var dateLabel : UILabel?
     var iconImageView: UIImageView?
     
@@ -37,22 +38,31 @@ class ListTableViewCell: UITableViewCell {
             make.bottom.equalTo(self.contentView).offset(-10)
         })
         
+        self.titleLabel = UILabel()
+        self.titleLabel?.font = XZClient.XZFont2(size: 15)
+        self.contentView.addSubview(self.titleLabel!)
+        self.titleLabel?.snp.makeConstraints({ (make) in
+            make.centerX.equalTo(self.iconImageView!)
+            make.top.equalTo(self.iconImageView!).offset(15)
+        })
+        
+        self.summeryLabel = UILabel()
+        self.summeryLabel?.font = XZClient.XZFont2(size: 14)
+        self.summeryLabel?.numberOfLines = 5
+        self.contentView.addSubview(self.summeryLabel!)
+        self.summeryLabel?.snp.makeConstraints({ (make) in
+            make.left.equalTo(self.iconImageView!).offset(15)
+            make.right.equalTo(self.iconImageView!).offset(-15)
+            make.top.equalTo((self.titleLabel?.snp.bottom)!).offset(15)
+        })
+        
         self.dateLabel = UILabel()
-        self.dateLabel?.text = "2018年03月20日";
+        self.dateLabel?.text = "2018.03.20";
         self.dateLabel?.font = XZClient.XZFont2(size: 14)
         self.contentView.addSubview(self.dateLabel!)
         self.dateLabel?.snp.makeConstraints({ (make) in
-            make.left.equalTo(self.iconImageView!).offset(15)
+            make.right.equalTo(self.iconImageView!).offset(-15)
             make.bottom.equalTo(self.iconImageView!).offset(-15)
-        })
-        
-        self.titleLabel = UILabel()
-        self.titleLabel?.text = "拾掇生活中的点滴,记录时光的故事";
-        self.titleLabel?.font = XZClient.XZFont2(size: 14)
-        self.contentView.addSubview(self.titleLabel!)
-        self.titleLabel?.snp.makeConstraints({ (make) in
-            make.left.equalTo(self.iconImageView!).offset(15)
-            make.bottom.equalTo((self.dateLabel?.snp.top)!).offset(-10)
         })
     }
 }

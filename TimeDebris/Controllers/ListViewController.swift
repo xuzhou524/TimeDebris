@@ -88,7 +88,7 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         if self.cacheLoanNoteArray == nil {
             return 350
         }
-        return 130
+        return 150
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -101,7 +101,7 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             let label = UILabel()
             label.font = XZClient.XZFont2(size: 15)
             label.textColor = XZSwiftColor.white
-            label.text = " - 随时记录生活 记录美 -"
+            label.text = " - 时刻记录你的生活 -"
             cell?.contentView.addSubview(label)
             label.snp.makeConstraints({ (make) -> Void in
                 make.center.equalTo((cell?.contentView)!)
@@ -115,12 +115,13 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         let loanModel = self.cacheLoanNoteArray![indexPath.row] as! LoanCacheManage
         userHeadCell.titleLabel?.text = loanModel.titleStr
+        userHeadCell.summeryLabel?.text = loanModel.detailsStr
         
         let timeInterval:TimeInterval = TimeInterval(Int(loanModel.timeStr!)!)
         let date = Date(timeIntervalSince1970: timeInterval)
         //格式话输出
         let dformatter = DateFormatter()
-        dformatter.dateFormat = "yyyy年MM月dd日 HH:mm"
+        dformatter.dateFormat = "yyyy.MM.dd HH:mm"
         
         userHeadCell.dateLabel?.text = dformatter.string(from: date)
         
