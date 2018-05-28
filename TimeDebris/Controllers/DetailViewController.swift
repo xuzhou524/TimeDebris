@@ -86,8 +86,14 @@ class DetailViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let detailCell = getCell(tableView, cell: DetailTableViewCell.self, indexPath: indexPath)
+        
+        let attributedString:NSMutableAttributedString = NSMutableAttributedString(string: (self.loanCacheModel?.detailsStr)!)
+        let paragraphStyle:NSMutableParagraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 10 //大小调整
+        paragraphStyle.firstLineHeadIndent = 30; 
+        attributedString.addAttribute(kCTParagraphStyleAttributeName as NSAttributedStringKey, value: paragraphStyle, range: NSMakeRange(0, (self.loanCacheModel?.detailsStr)!.Lenght))
+        detailCell.summeryLabel?.attributedText = attributedString
 
-        detailCell.summeryLabel?.text = self.loanCacheModel?.detailsStr
         
         let timeInterval:TimeInterval = TimeInterval(Int((self.loanCacheModel?.timeStr!)!)!)
         let date = Date(timeIntervalSince1970: timeInterval)

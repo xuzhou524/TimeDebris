@@ -82,8 +82,9 @@ class DetailTableViewCell: UITableViewCell {
         self.summeryLabel?.snp.makeConstraints({ (make) in
             make.left.equalTo(self.contentView).offset(15)
             make.right.equalTo(self.contentView).offset(-15)
-            make.top.equalTo(self.contentView).offset(25)
+            make.top.equalTo(self.contentView).offset(20)
         })
+        self.summeryLabel?.lineBreakMode = .byWordWrapping
         
         self.dateLabel = UILabel()
         self.dateLabel?.text = "2018.03.20";
@@ -92,7 +93,7 @@ class DetailTableViewCell: UITableViewCell {
         self.contentView.addSubview(self.dateLabel!)
         self.dateLabel?.snp.makeConstraints({ (make) in
             make.right.equalTo(self.contentView).offset(-15)
-            make.top.equalTo((self.summeryLabel?.snp.bottom)!).offset(25)
+            make.top.equalTo((self.summeryLabel?.snp.bottom)!).offset(30)
         })
     }
 }
