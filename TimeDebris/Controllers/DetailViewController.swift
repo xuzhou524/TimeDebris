@@ -1,15 +1,16 @@
 //
-//  ListViewController.swift
+//  DetailViewController.swift
 //  TimeDebris
 //
-//  Created by gozap on 2018/3/16.
+//  Created by gozap on 2018/5/28.
 //  Copyright © 2018年 com.longdai. All rights reserved.
 //
 
 import UIKit
 
-class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
-    var cacheLoanNoteArray: NSMutableArray?
+class DetailViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+    
+    var loanCacheModel : LoanCacheManage?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -22,13 +23,11 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         tableView.separatorStyle = .none
         return tableView
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = XZSwiftColor.black
         self.navigationController?.navigationBar.isHidden = true
-        
-        self.cacheLoanNoteArray = UserDefaults.standard.getCustomObject(forKey: "kTMCacheLoanManage") as? NSMutableArray
         
         let headTapView = UIView()
         headTapView.backgroundColor = XZSwiftColor.backgroundColor
@@ -37,7 +36,7 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             make.left.right.top.equalTo(self.view)
             make.height.equalTo(64)
         });
-
+        
         let backImageView = UIImageView()
         backImageView.image = UIImage.init(named: "d_Arrow_left")?.withRenderingMode(.alwaysTemplate)
         backImageView.tintColor = XZSwiftColor.generalOverallColor
@@ -50,7 +49,7 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         });
         
         let titleLabel = UILabel()
-        titleLabel.text = "随时"
+        titleLabel.text = self.loanCacheModel?.titleStr
         titleLabel.textColor = XZSwiftColor.generalOverallColor
         titleLabel.font = XZClient.XZFont2(size: 18)
         headTapView.addSubview(titleLabel)
@@ -69,7 +68,7 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             make.left.right.bottom.equalTo(self.view)
         });
         
-        regClass(self.tableView, cell: ListTableViewCell.self)
+        regClass(self.tableView, cell: DetailTableViewCell.self)
     }
     
     // MARK: - Table view data source
@@ -78,61 +77,26 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if self.cacheLoanNoteArray == nil {
-            return 1
-        }
-        return (self.cacheLoanNoteArray?.count)!
+        return 1
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if self.cacheLoanNoteArray == nil {
-            return 350
-        }
-        return 130
+        return XZClient.ScreenHeight()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if self.cacheLoanNoteArray == nil {
-            
-            let cell: UITableViewCell? = UITableViewCell.init(style: .default, reuseIdentifier: "nullCell")
-            cell?.selectionStyle = UITableViewCellSelectionStyle.none
-            cell?.contentView.backgroundColor = XZSwiftColor.backgroundColor
-            
-            let label = UILabel()
-            label.font = XZClient.XZFont2(size: 15)
-            label.textColor = XZSwiftColor.white
-            label.text = " - 时刻记录你的生活 -"
-            cell?.contentView.addSubview(label)
-            label.snp.makeConstraints({ (make) -> Void in
-                make.center.equalTo((cell?.contentView)!)
-            });
-            return cell!
-        }
-        
-        let userHeadCell = getCell(tableView, cell: ListTableViewCell.self, indexPath: indexPath)
-        //let temp = Int(arc4random_uniform(6))
-        //userHeadCell.iconImageView?.image = UIImage.init(named: String(temp) + ".png")
-        
-        let loanModel = self.cacheLoanNoteArray![indexPath.row] as! LoanCacheManage
-        userHeadCell.titleLabel?.text = loanModel.titleStr
+        let detailCell = getCell(tableView, cell: DetailTableViewCell.self, indexPath: indexPath)
 
-        let timeInterval:TimeInterval = TimeInterval(Int(loanModel.timeStr!)!)
+        detailCell.summeryLabel?.text = self.loanCacheModel?.detailsStr
+        
+        let timeInterval:TimeInterval = TimeInterval(Int((self.loanCacheModel?.timeStr!)!)!)
         let date = Date(timeIntervalSince1970: timeInterval)
         //格式话输出
         let dformatter = DateFormatter()
         dformatter.dateFormat = "yyyy.MM.dd HH:mm"
+        detailCell.dateLabel?.text = dformatter.string(from: date)
         
-        userHeadCell.dateLabel?.text = dformatter.string(from: date)
-        
-        return userHeadCell
-        
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let loanModel = self.cacheLoanNoteArray![indexPath.row] as! LoanCacheManage
-        let  detailVC = DetailViewController()
-        detailVC.loanCacheModel = loanModel
-        self.navigationController?.pushViewController(detailVC, animated: true)
+        return detailCell
     }
     
     @objc func backActionClick() {
@@ -143,4 +107,5 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
 }

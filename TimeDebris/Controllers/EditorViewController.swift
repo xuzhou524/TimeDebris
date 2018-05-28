@@ -179,6 +179,7 @@ class EditorViewController: UIViewController,UIGestureRecognizerDelegate {
             loanModelArray?.insert(loanModel, at: 0)
         }
         UserDefaults.standard.saveCustomObject(customObject: loanModelArray!, key: "kTMCacheLoanManage")
+        self.backActionClick()
     }
     
     @objc func viewTap(){
