@@ -23,13 +23,18 @@ class ListTableViewCell: UITableViewCell {
         self.sebView()
     }
     func sebView() ->Void{
+        self.contentView.backgroundColor = XZSwiftColor.backgroundColor
         self.selectionStyle = .none
         
         self.iconImageView = UIImageView();
-        self.iconImageView?.backgroundColor = XZSwiftColor.orange
+        self.iconImageView?.backgroundColor = XZSwiftColor.white
+        self.iconImageView?.layer.cornerRadius = 3
         self.contentView.addSubview(self.iconImageView!)
         self.iconImageView?.snp.makeConstraints({ (make) in
-            make.top.left.right.bottom.equalTo(self.contentView)
+            make.top.equalTo(self.contentView).offset(5)
+            make.left.equalTo(self.contentView).offset(15)
+            make.right.equalTo(self.contentView).offset(-15)
+            make.bottom.equalTo(self.contentView).offset(-10)
         })
         
         self.dateLabel = UILabel()
@@ -37,8 +42,8 @@ class ListTableViewCell: UITableViewCell {
         self.dateLabel?.font = XZClient.XZFont2(size: 14)
         self.contentView.addSubview(self.dateLabel!)
         self.dateLabel?.snp.makeConstraints({ (make) in
-            make.left.equalTo(self.contentView).offset(15)
-            make.bottom.equalTo(self.contentView).offset(-15)
+            make.left.equalTo(self.iconImageView!).offset(15)
+            make.bottom.equalTo(self.iconImageView!).offset(-15)
         })
         
         self.titleLabel = UILabel()
@@ -46,7 +51,7 @@ class ListTableViewCell: UITableViewCell {
         self.titleLabel?.font = XZClient.XZFont2(size: 14)
         self.contentView.addSubview(self.titleLabel!)
         self.titleLabel?.snp.makeConstraints({ (make) in
-            make.left.equalTo(self.contentView).offset(15)
+            make.left.equalTo(self.iconImageView!).offset(15)
             make.bottom.equalTo((self.dateLabel?.snp.top)!).offset(-10)
         })
     }

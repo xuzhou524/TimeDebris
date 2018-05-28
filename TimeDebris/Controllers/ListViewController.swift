@@ -88,7 +88,7 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         if self.cacheLoanNoteArray == nil {
             return 350
         }
-        return 120
+        return 130
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -110,11 +110,10 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         }
         
         let userHeadCell = getCell(tableView, cell: ListTableViewCell.self, indexPath: indexPath)
-        var colorArray = [XZSwiftColor.brown,XZSwiftColor.orange,XZSwiftColor.red,XZSwiftColor.yellow,XZSwiftColor.green]
-        userHeadCell.iconImageView?.backgroundColor = colorArray[indexPath.row]
+        //let temp = Int(arc4random_uniform(6))
+        //userHeadCell.iconImageView?.image = UIImage.init(named: String(temp) + ".png")
         
         let loanModel = self.cacheLoanNoteArray![indexPath.row] as! LoanCacheManage
-        
         userHeadCell.titleLabel?.text = loanModel.titleStr
         
         let timeInterval:TimeInterval = TimeInterval(Int(loanModel.timeStr!)!)

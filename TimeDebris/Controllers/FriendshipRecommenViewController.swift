@@ -48,6 +48,8 @@ class FriendshipRecommenViewController: UIViewController,UITableViewDelegate,UIT
             make.centerY.equalTo(headTapView).offset(10)
             make.width.height.equalTo(18)
         });
+        let tapAction = UITapGestureRecognizer.init(target: self, action: #selector(UserViewController.backActionClick))
+        backImageView.addGestureRecognizer(tapAction)
         
         let titleLabel = UILabel()
         titleLabel.text = "开发者app集锦"
@@ -58,9 +60,7 @@ class FriendshipRecommenViewController: UIViewController,UITableViewDelegate,UIT
             make.centerX.equalTo(headTapView)
             make.centerY.equalTo(backImageView)
         });
-        let tapAction = UITapGestureRecognizer.init(target: self, action: #selector(UserViewController.backActionClick))
-        backImageView.addGestureRecognizer(tapAction)
-        
+
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.view.addSubview(self.tableView)
@@ -100,6 +100,10 @@ class FriendshipRecommenViewController: UIViewController,UITableViewDelegate,UIT
             let url = NSURL(string: urlString)
             UIApplication.shared.openURL(url! as URL)
         }
+    }
+    
+    @objc func backActionClick() {
+        self.navigationController?.popViewController(animated: true)
     }
     
 }

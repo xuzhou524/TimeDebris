@@ -174,9 +174,10 @@ class EditorViewController: UIViewController,UIGestureRecognizerDelegate {
         var loanModelArray = UserDefaults.standard.getCustomObject(forKey: "kTMCacheLoanManage") as? NSMutableArray
         if (loanModelArray == nil) {
             loanModelArray = NSMutableArray()
+            loanModelArray?.add(loanModel)
+        }else{
+            loanModelArray?.insert(loanModel, at: 0)
         }
-        loanModelArray?.add(loanModel)
-        
         UserDefaults.standard.saveCustomObject(customObject: loanModelArray!, key: "kTMCacheLoanManage")
     }
     
