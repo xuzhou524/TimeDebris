@@ -75,7 +75,7 @@ class DetailTableViewCell: UITableViewCell {
         self.selectionStyle = .none
 
         self.summeryLabel = UILabel()
-        self.summeryLabel?.font = XZClient.XZFont2(size: 15)
+        self.summeryLabel?.font = XZClient.XZFont2(size: 14)
         self.summeryLabel?.numberOfLines = 0
         self.summeryLabel?.textColor = XZSwiftColor.white
         self.contentView.addSubview(self.summeryLabel!)
@@ -88,7 +88,7 @@ class DetailTableViewCell: UITableViewCell {
         
         self.dateLabel = UILabel()
         self.dateLabel?.text = "2018.03.20";
-        self.dateLabel?.font = XZClient.XZFont2(size: 14)
+        self.dateLabel?.font = XZClient.XZFont2(size: 13)
         self.dateLabel?.textColor = XZSwiftColor.white
         self.contentView.addSubview(self.dateLabel!)
         self.dateLabel?.snp.makeConstraints({ (make) in
