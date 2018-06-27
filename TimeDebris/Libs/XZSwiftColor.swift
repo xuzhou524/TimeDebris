@@ -46,6 +46,12 @@ class XZSwiftColor: UIColor{
         }
     }
     
+    static var xzRedColor : UIColor{
+        get{
+            return colorWith255RGB(255 ,g: 64, b: 64);
+        }
+    }
+    
     static var generalOverallColor : UIColor{
         get{
             return colorWith255RGB(255 ,g: 255, b: 255);

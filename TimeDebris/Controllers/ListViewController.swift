@@ -78,21 +78,21 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if self.cacheLoanNoteArray == nil {
+        if self.cacheLoanNoteArray == nil || self.cacheLoanNoteArray?.count == 0 {
             return 1
         }
         return (self.cacheLoanNoteArray?.count)!
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if self.cacheLoanNoteArray == nil {
+        if self.cacheLoanNoteArray == nil || self.cacheLoanNoteArray?.count == 0 {
             return 350
         }
-        return 130
+        return 110
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if self.cacheLoanNoteArray == nil {
+        if self.cacheLoanNoteArray == nil || self.cacheLoanNoteArray?.count == 0 {
             
             let cell: UITableViewCell? = UITableViewCell.init(style: .default, reuseIdentifier: "nullCell")
             cell?.selectionStyle = UITableViewCellSelectionStyle.none
@@ -110,8 +110,14 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         }
         
         let userHeadCell = getCell(tableView, cell: ListTableViewCell.self, indexPath: indexPath)
-        //let temp = Int(arc4random_uniform(6))
-        //userHeadCell.iconImageView?.image = UIImage.init(named: String(temp) + ".png")
+        
+        userHeadCell.shanChuView?.tag = (indexPath as NSIndexPath).row + 100
+        let tapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(ListViewController.deleteLocalNotes(_:)))
+        userHeadCell.shanChuView!.addGestureRecognizer(tapGestureRecognizer)
+        
+        userHeadCell.bgScrollView?.tag = (indexPath as NSIndexPath).row + 1000
+        let scrollViewRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(ListViewController.selectModel(_:)))
+        userHeadCell.bgScrollView!.addGestureRecognizer(scrollViewRecognizer)
         
         let loanModel = self.cacheLoanNoteArray![indexPath.row] as! LoanCacheManage
         userHeadCell.titleLabel?.text = loanModel.titleStr
@@ -125,11 +131,16 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         userHeadCell.dateLabel?.text = dformatter.string(from: date)
         
         return userHeadCell
-        
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let loanModel = self.cacheLoanNoteArray![indexPath.row] as! LoanCacheManage
+    @objc func deleteLocalNotes(_ tap:UITapGestureRecognizer){
+        self.cacheLoanNoteArray?.removeObject(at: ((tap.view?.tag)! - 100))
+        UserDefaults.standard.saveCustomObject(customObject: self.cacheLoanNoteArray!, key: "kTMCacheLoanManage")
+        self.tableView.reloadData()
+    }
+    
+    @objc func selectModel(_ tap:UITapGestureRecognizer){
+        let loanModel = self.cacheLoanNoteArray![((tap.view?.tag)! - 1000)] as! LoanCacheManage
         let  detailVC = DetailViewController()
         detailVC.loanCacheModel = loanModel
         self.navigationController?.pushViewController(detailVC, animated: true)
