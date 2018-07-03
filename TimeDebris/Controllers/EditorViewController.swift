@@ -8,7 +8,8 @@
 
 import UIKit
 
-class EditorViewController: UIViewController,UIGestureRecognizerDelegate {
+class EditorViewController: UIViewController,UIGestureRecognizerDelegate,UITextViewDelegate {
+    var describeTextView : UITextView?
     
     let headTapView : UIView = {
         let headTapView = UIView()
@@ -19,15 +20,9 @@ class EditorViewController: UIViewController,UIGestureRecognizerDelegate {
     let titleTextField : UITextField = {
         let titleTextField = UITextField()
         titleTextField.placeholder = "今天做了什么事"
+        titleTextField.textColor = XZSwiftColor.xzGlay69
         titleTextField.font = XZClient.XZFont2(size: 16)
         return titleTextField
-    }()
-    
-    let describeTextView : UITextField = {
-        let describeTextView = UITextField()
-        describeTextView.placeholder = "写下你的描述"
-        describeTextView.font = XZClient.XZFont2(size: 16)
-        return describeTextView
     }()
     
     let iconImageView : UIImageView = {
@@ -112,25 +107,30 @@ class EditorViewController: UIViewController,UIGestureRecognizerDelegate {
         calendarImageView.snp.makeConstraints({ (make) -> Void in
             make.left.equalTo(self.titleTextField)
             make.top.equalTo(self.titleTextField.snp.bottom).offset(15)
-            make.width.height.equalTo(24)
+            make.width.height.equalTo(25)
         });
         let dateFormatter:DateFormatter = DateFormatter();
         dateFormatter.dateFormat = "dd";
         let dateString:String = dateFormatter.string(from: Date())
         calendarImageView.image = UIImage.init(named: "Calendar_" + dateString)?.withRenderingMode(.alwaysTemplate)
         
-        self.view.addSubview(self.describeTextView)
-        self.describeTextView.snp.makeConstraints({ (make) -> Void in
-            make.left.right.equalTo(self.titleTextField)
-            make.top.equalTo(calendarImageView.snp.bottom).offset(15)
-            make.height.equalTo(50)
+        self.describeTextView = UITextView()
+        self.describeTextView?.text = "写下你的描述"
+        self.describeTextView?.font = XZClient.XZFont2(size: 16)
+        self.describeTextView?.textColor = XZSwiftColor.xzGlay190
+        self.describeTextView?.delegate = self;
+        self.view.addSubview(self.describeTextView!)
+        self.describeTextView?.snp.makeConstraints({ (make) -> Void in
+            make.left.right.equalTo(self.titleTextField).offset(-5)
+            make.top.equalTo(calendarImageView.snp.bottom).offset(20)
+            make.height.equalTo(200)
         });
         
         self.view.addSubview(self.iconImageView)
         self.iconImageView.snp.makeConstraints({ (make) -> Void in
             make.left.right.equalTo(self.titleTextField)
-            make.top.equalTo(self.describeTextView.snp.bottom).offset(15)
-            make.height.equalTo(120)
+            make.top.equalTo((self.describeTextView?.snp.bottom)!).offset(15)
+            make.height.equalTo(0)
         });
         
         let saveButton = UIButton()
@@ -141,7 +141,7 @@ class EditorViewController: UIViewController,UIGestureRecognizerDelegate {
         self.view.addSubview(saveButton)
         saveButton.snp.makeConstraints({ (make) -> Void in
             make.centerX.equalTo(self.view)
-            make.top.equalTo(self.iconImageView.snp.bottom).offset(40)
+            make.top.equalTo((self.describeTextView?.snp.bottom)!).offset(40)
             make.width.equalTo(200)
             make.height.equalTo(40)
         });
@@ -156,7 +156,7 @@ class EditorViewController: UIViewController,UIGestureRecognizerDelegate {
         if (titleStr?.Lenght)! <= 0 {
             return
         }
-        let describeStr = self.describeTextView.text
+        let describeStr = self.describeTextView?.text
         if (describeStr?.Lenght)! <= 0 {
             return
         }
@@ -165,7 +165,7 @@ class EditorViewController: UIViewController,UIGestureRecognizerDelegate {
         let loanModel = LoanCacheManage.init()
         
         loanModel.titleStr = self.titleTextField.text
-        loanModel.detailsStr = self.describeTextView.text
+        loanModel.detailsStr = self.describeTextView?.text
         
         let timeInterval:TimeInterval = NSDate().timeIntervalSince1970
         let timeStamp = Int(timeInterval)
@@ -194,10 +194,23 @@ class EditorViewController: UIViewController,UIGestureRecognizerDelegate {
         self.navigationController?.view.layer.add(transition, forKey: nil)
         self.navigationController?.popViewController(animated: false)
     }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == "写下你的描述" {
+            textView.text = ""
+            self.describeTextView?.textColor = XZSwiftColor.xzGlay69
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text == ""{
+            textView.text = "写下你的描述"
+            self.describeTextView?.textColor = XZSwiftColor.xzGlay190
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 }
