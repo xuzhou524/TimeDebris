@@ -9,7 +9,7 @@
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "Icon.png",
+      "filename" : "Icon60.png",
       "scale" : "3x"
     },
     {
@@ -96,7 +96,7 @@
     {
       "size" : "1024x1024",
       "idiom" : "ios-marketing",
-      "filename" : "suishi.png",
+      "filename" : "iTunesArtwork@2x.png",
       "scale" : "1x"
     }
   ],

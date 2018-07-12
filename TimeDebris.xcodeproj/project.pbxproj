@@ -62,7 +62,6 @@
 		53D27C7420B665D80071ABDE /* v2ex.png in Resources */ = {isa = PBXBuildFile; fileRef = 53D27C7320B665D80071ABDE /* v2ex.png */; };
 		53D27C7620B668250071ABDE /* about_criticism.png in Resources */ = {isa = PBXBuildFile; fileRef = 53D27C7520B668250071ABDE /* about_criticism.png */; };
 		53D27C7820B6682A0071ABDE /* about_praise.png in Resources */ = {isa = PBXBuildFile; fileRef = 53D27C7720B6682A0071ABDE /* about_praise.png */; };
-		53D27C7C20B7EA1B0071ABDE /* appName.png in Resources */ = {isa = PBXBuildFile; fileRef = 53D27C7B20B7EA1A0071ABDE /* appName.png */; };
 		53D27C7E20B7F84D0071ABDE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53D27C7D20B7F84D0071ABDE /* Images.xcassets */; };
 		53DD73EE2060B3A800C67000 /* arrow_right@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53DD73EC2060B3A800C67000 /* arrow_right@3x.png */; };
 		53DD73EF2060B3A800C67000 /* arrow_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53DD73ED2060B3A800C67000 /* arrow_right@2x.png */; };
@@ -107,6 +106,7 @@
 		53E24A9B1FFF2A1F002117AF /* HomeSampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E24A9A1FFF2A1F002117AF /* HomeSampleView.swift */; };
 		53E24A9F1FFF2DC2002117AF /* NotoSansHans-DemiLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53E24A9D1FFF2DC2002117AF /* NotoSansHans-DemiLight.otf */; };
 		53E24AA01FFF2DC2002117AF /* NotoSansHans-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 53E24A9E1FFF2DC2002117AF /* NotoSansHans-Light.otf */; };
+		53F5371320F7424600674705 /* appName.png in Resources */ = {isa = PBXBuildFile; fileRef = 53F5371220F7424500674705 /* appName.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -176,7 +176,6 @@
 		53D27C7320B665D80071ABDE /* v2ex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = v2ex.png; sourceTree = "<group>"; };
 		53D27C7520B668250071ABDE /* about_criticism.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about_criticism.png; sourceTree = "<group>"; };
 		53D27C7720B6682A0071ABDE /* about_praise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about_praise.png; sourceTree = "<group>"; };
-		53D27C7B20B7EA1A0071ABDE /* appName.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appName.png; path = "../../../../../Desktop/未命名文件夹 6/appName.png"; sourceTree = "<group>"; };
 		53D27C7D20B7F84D0071ABDE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		53DD73EC2060B3A800C67000 /* arrow_right@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_right@3x.png"; sourceTree = "<group>"; };
 		53DD73ED2060B3A800C67000 /* arrow_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_right@2x.png"; sourceTree = "<group>"; };
@@ -221,6 +220,7 @@
 		53E24A9A1FFF2A1F002117AF /* HomeSampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSampleView.swift; sourceTree = "<group>"; };
 		53E24A9D1FFF2DC2002117AF /* NotoSansHans-DemiLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansHans-DemiLight.otf"; sourceTree = "<group>"; };
 		53E24A9E1FFF2DC2002117AF /* NotoSansHans-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansHans-Light.otf"; sourceTree = "<group>"; };
+		53F5371220F7424500674705 /* appName.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appName.png; sourceTree = "<group>"; };
 		8CFDF6BBAECB9C5DCB586C92 /* Pods-TimeDebris.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeDebris.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimeDebris/Pods-TimeDebris.debug.xcconfig"; sourceTree = "<group>"; };
 		AF92AF40E5E0D40609371BBE /* Pods_TimeDebris.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeDebris.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1A2255362AE26B94DA504F6 /* Pods-TimeDebris.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeDebris.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimeDebris/Pods-TimeDebris.release.xcconfig"; sourceTree = "<group>"; };
@@ -477,7 +477,7 @@
 		53DD73EB2060B39D00C67000 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				53D27C7B20B7EA1A0071ABDE /* appName.png */,
+				53F5371220F7424500674705 /* appName.png */,
 				53D27C7720B6682A0071ABDE /* about_praise.png */,
 				53D27C7520B668250071ABDE /* about_criticism.png */,
 				53D27C7320B665D80071ABDE /* v2ex.png */,
@@ -628,13 +628,13 @@
 				53DD74282062453D00C67000 /* Calendar_17.png in Resources */,
 				53DD74362062453D00C67000 /* Calendar_26.png in Resources */,
 				53D27C5020B6615C0071ABDE /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
-				53D27C7C20B7EA1B0071ABDE /* appName.png in Resources */,
 				53DD742E2062453D00C67000 /* Calendar_30.png in Resources */,
 				53D27C5420B6615C0071ABDE /* README.txt in Resources */,
 				53DD73EE2060B3A800C67000 /* arrow_right@3x.png in Resources */,
 				53DD743A2062453D00C67000 /* Calendar_22.png in Resources */,
 				53DD741F2062453D00C67000 /* Calendar_21.png in Resources */,
 				53DD742A2062453D00C67000 /* Calendar_07.png in Resources */,
+				53F5371320F7424600674705 /* appName.png in Resources */,
 				53DD74262062453D00C67000 /* Calendar_18.png in Resources */,
 				53DD74202062453D00C67000 /* Calendar_12.png in Resources */,
 				53E24A9F1FFF2DC2002117AF /* NotoSansHans-DemiLight.otf in Resources */,
