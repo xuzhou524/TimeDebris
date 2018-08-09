@@ -69,41 +69,6 @@ class TitleTableViewCell: UITableViewCell {
     }
 }
 
-class UserHeadTableViewCell: UITableViewCell {
-    var titleLabel: UILabel?
-    var iconImageView: UIImageView?
-    
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.sebView()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        self.sebView()
-    }
-    func sebView() ->Void{
-        self.selectionStyle = .none
-        
-        self.iconImageView = UIImageView();
-        self.iconImageView?.image = UIImage(named: "UserHead.jpeg")
-        self.contentView.addSubview(self.iconImageView!)
-        self.iconImageView?.snp.makeConstraints({ (make) in
-            make.top.left.right.bottom.equalTo(self.contentView)
-        })
-        
-        self.titleLabel = UILabel()
-        self.titleLabel?.text = "拾掇生活中的点滴,记录时光的故事";
-        self.titleLabel?.textColor = XZSwiftColor.backgroundColor
-        self.titleLabel?.font = XZClient.XZFont2(size: 16)
-        self.contentView.addSubview(self.titleLabel!)
-        self.titleLabel?.snp.makeConstraints({ (make) in
-            make.centerY.equalTo(self.contentView).offset(25)
-            make.centerX.equalTo(self.contentView)
-        })
-    }
-}
-
 class More_InterTableViewCell: UITableViewCell {
     var zanImageView: UIImageView?
     var zanLabel: UILabel?
@@ -131,7 +96,7 @@ class More_InterTableViewCell: UITableViewCell {
         oneView.snp.makeConstraints { (make) -> Void in
             make.left.equalTo(self.contentView)
             make.bottom.equalTo(self.contentView).offset(-10)
-            make.top.equalTo(self.contentView).offset(10)
+            make.top.equalTo(self.contentView).offset(0)
             make.right.equalTo(self.contentView.snp.centerX).offset(-0.5)
         }
         
@@ -171,7 +136,7 @@ class More_InterTableViewCell: UITableViewCell {
         twoView.snp.makeConstraints { (make) -> Void in
             make.right.equalTo(self.contentView)
             make.bottom.equalTo(self.contentView).offset(-10)
-            make.top.equalTo(self.contentView).offset(10)
+            make.top.equalTo(self.contentView).offset(0)
             make.left.equalTo(self.contentView.snp.centerX).offset(0.5)
         }
         

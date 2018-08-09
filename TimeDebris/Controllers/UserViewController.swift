@@ -10,22 +10,40 @@ import UIKit
 import StoreKit
 
 class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
+    var backImgHeight = XZClient.ScreenWidth()
+    var backImgWidth = XZClient.ScreenWidth()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         UIApplication.shared.statusBarStyle = .lightContent
     }
     
+    let bgHeadImageView : UIImageView = {
+        let bgHeadImageView = UIImageView.init(frame: CGRect(x: 0, y: 0, width: XZClient.ScreenWidth(), height: XZClient.ScreenWidth()))
+        bgHeadImageView.image = UIImage.init(named: "bg-mine")
+        return bgHeadImageView
+    }()
+    
     let tableView : UITableView = {
         let tableView = UITableView()
-        tableView.backgroundColor = XZSwiftColor.white
+        tableView.backgroundColor = XZSwiftColor.clear
         tableView.separatorStyle = .none
         return tableView
     }()
+    
+    let headView : UIView = {
+        let headView = UIView.init(frame: CGRect(x: 0, y: 0, width: XZClient.ScreenWidth(), height: 218))
+        headView.backgroundColor = XZSwiftColor.clear
+
+        return headView
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = XZSwiftColor.white
         self.navigationController?.navigationBar.isHidden = true
+        
+        self.view.addSubview(self.bgHeadImageView)
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -34,6 +52,18 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             make.top.equalTo(self.view).offset(-20)
             make.left.right.bottom.equalTo(self.view)
         });
+        
+        self.tableView.tableHeaderView = self.headView
+        
+        let titleLabel = UILabel()
+        titleLabel.text = "拾掇生活中的点滴,记录时光的故事";
+        titleLabel.textColor = XZSwiftColor.backgroundColor
+        titleLabel.font = XZClient.XZFont2(size: 16)
+        self.headView.addSubview(titleLabel)
+        titleLabel.snp.makeConstraints({ (make) in
+            make.centerY.equalTo(self.headView)
+            make.centerX.equalTo(self.headView)
+        })
         
         let headTapView = UIView()
         headTapView.backgroundColor = XZSwiftColor.clear
@@ -57,7 +87,6 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         backImageView.addGestureRecognizer(tapAction)
         
         regClass(self.tableView, cell: TitleTableViewCell.self)
-        regClass(self.tableView, cell: UserHeadTableViewCell.self)
         regClass(self.tableView, cell: More_InterTableViewCell.self)
     }
     
@@ -67,15 +96,13 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        return 6
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if (indexPath as NSIndexPath).row == 0 {
-            return 200
+            return 100
         }else if (indexPath as NSIndexPath).row == 1 {
-            return 110
-        }else if (indexPath as NSIndexPath).row == 2 {
             return 15
         }
         return 55
@@ -83,15 +110,12 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if (indexPath as NSIndexPath).row == 0 {
-            let userHeadCell = getCell(tableView, cell: UserHeadTableViewCell.self, indexPath: indexPath)
-            return userHeadCell
-        }else if (indexPath as NSIndexPath).row == 1 {
             let interCell = getCell(tableView, cell: More_InterTableViewCell.self, indexPath: indexPath)
             interCell.zanImageView?.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(UserViewController.zanImageViewTap)))
             interCell.tuImageView?.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(UserViewController.tuImageView)))
             interCell.selectionStyle = .none
             return interCell
-        }else if (indexPath as NSIndexPath).row == 2 {
+        }else if (indexPath as NSIndexPath).row == 1 {
             let cell = UITableViewCell()
             cell.backgroundColor = XZSwiftColor.white
             cell.selectionStyle = .none
@@ -101,16 +125,16 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let baseCell = getCell(tableView, cell: TitleTableViewCell.self, indexPath: indexPath)
         baseCell.clipsToBounds = true
         baseCell.iconImageView?.isHidden = false
-        if (indexPath as NSIndexPath).row == 3 {
+        if (indexPath as NSIndexPath).row == 2 {
             baseCell.titleLabel?.text = "新浪微博"
             baseCell.detaileLabel?.text = "徐_Aaron"
-        }else if (indexPath as NSIndexPath).row == 4 {
+        }else if (indexPath as NSIndexPath).row == 3 {
             baseCell.titleLabel?.text = "推荐给记友"
             baseCell.detaileLabel?.text = ""
-        }else if (indexPath as NSIndexPath).row == 5 {
+        }else if (indexPath as NSIndexPath).row == 4 {
             baseCell.titleLabel?.text = "开发者app集锦"
             baseCell.detaileLabel?.text = ""
-        }else if (indexPath as NSIndexPath).row == 6 {
+        }else if (indexPath as NSIndexPath).row == 5 {
             baseCell.titleLabel?.text = "随时笔记"
             let infoDict = Bundle.main.infoDictionary
             if let info = infoDict {
@@ -124,9 +148,9 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 4 {
+        if indexPath.row == 3 {
             self.share()
-        }else if indexPath.row == 5 {
+        }else if indexPath.row == 4 {
             let friendVC = FriendshipRecommenViewController()
             self.navigationController?.pushViewController(friendVC, animated: true);
         }
@@ -183,6 +207,25 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     @objc func backActionClick() {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let contentOffsety = scrollView.contentOffset.y
+        if contentOffsety < 0 {
+            var rect = self.bgHeadImageView.frame
+            rect.size.height = self.backImgHeight - contentOffsety
+            rect.size.width = self.backImgWidth * (self.backImgHeight - contentOffsety) / self.backImgHeight
+            rect.origin.x = -(rect.size.width - self.backImgWidth) / 2.0
+            rect.origin.y = 0
+            self.bgHeadImageView.frame = rect
+        }else{
+            var rect = self.bgHeadImageView.frame
+            rect.size.height = XZClient.ScreenWidth()
+            rect.size.width = XZClient.ScreenWidth()
+            rect.origin.x = 0
+            rect.origin.y = -contentOffsety
+            self.bgHeadImageView.frame = rect
+        }
     }
 
     override func didReceiveMemoryWarning() {
