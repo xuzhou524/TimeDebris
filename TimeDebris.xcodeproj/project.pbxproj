@@ -567,7 +567,6 @@
 				532150811FF5F9CD00C67F13 /* Frameworks */,
 				532150821FF5F9CD00C67F13 /* Resources */,
 				3E7ED99E3D8DB6A4A2AD245C /* [CP] Embed Pods Frameworks */,
-				09ADD84DA988677B38412F47 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -681,21 +680,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		09ADD84DA988677B38412F47 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TimeDebris/Pods-TimeDebris-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		3E7ED99E3D8DB6A4A2AD245C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

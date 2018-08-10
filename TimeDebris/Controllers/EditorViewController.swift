@@ -19,7 +19,7 @@ class EditorViewController: UIViewController,UIGestureRecognizerDelegate,UITextV
     
     let titleTextField : UITextField = {
         let titleTextField = UITextField()
-        titleTextField.placeholder = "今天做了什么事"
+        titleTextField.placeholder = "标题"
         titleTextField.textColor = XZSwiftColor.xzGlay69
         titleTextField.font = XZClient.XZFont2(size: 16)
         return titleTextField
