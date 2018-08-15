@@ -159,9 +159,9 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     func share()  {
         // 1.创建分享参数
         let shareParames = NSMutableDictionary()
-        shareParames.ssdkSetupShareParams(byText: "拾掇生活中的点滴,记录时光的故事" + "  http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=1330908170&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8",
+        shareParames.ssdkSetupShareParams(byText: "拾掇生活中的点滴\n记录时光的故事",
                                           images : UIImage(named: "Icon-60"),
-                                          url : NSURL(string:"http://www.xzzai.com") as URL?,
+                                          url : NSURL(string:"https://itunes.apple.com/cn/app/id1330908170") as URL?,
                                           title : "随时笔记 - 时刻记录你的生活",
                                           type : SSDKContentType.auto)
         
