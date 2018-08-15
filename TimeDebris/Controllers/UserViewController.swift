@@ -183,14 +183,11 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     @objc func zanImageViewTap(){
         if #available(iOS 10.3, *) {
-            #if DEBUG
-            #else
             SKStoreReviewController.requestReview()
-            #endif
         }else if #available(iOS 10.0, *) {
-            UIApplication.shared.open(URL(string:"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=1330908170&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8")!, options: [:], completionHandler: nil)
+            UIApplication.shared.open(URL(string:"https://itunes.apple.com/cn/app/id1330908170")!, options: [:], completionHandler: nil)
         } else {
-            let urlString = "http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=1330908170&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8"
+            let urlString = "https://itunes.apple.com/cn/app/id1330908170"
             let url = NSURL(string: urlString)
             UIApplication.shared.openURL(url! as URL)
         }
