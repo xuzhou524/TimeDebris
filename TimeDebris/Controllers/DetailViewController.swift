@@ -57,8 +57,23 @@ class DetailViewController: UIViewController,UITableViewDelegate,UITableViewData
             make.centerX.equalTo(headTapView)
             make.centerY.equalTo(backImageView)
         });
-        let tapAction = UITapGestureRecognizer.init(target: self, action: #selector(UserViewController.backActionClick))
+        
+        let editorButton = UIButton()
+        editorButton.titleLabel?.font = XZClient.XZFont2(size: 15)
+        editorButton.setTitle("编辑", for: .normal)
+        editorButton.setTitleColor(XZSwiftColor.generalOverallColor, for: .normal)
+        headTapView.addSubview(editorButton)
+        editorButton.snp.makeConstraints({ (make) -> Void in
+            make.right.equalTo(headTapView).offset(-10)
+            make.centerY.equalTo(headTapView).offset(10)
+            make.height.equalTo(18)
+            make.width.equalTo(40)
+        });
+        
+        let tapAction = UITapGestureRecognizer.init(target: self, action: #selector(DetailViewController.backActionClick))
         backImageView.addGestureRecognizer(tapAction)
+        
+        editorButton.addTarget(self, action: #selector(DetailViewController.editorActionClick), for: .touchUpInside)
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -108,7 +123,13 @@ class DetailViewController: UIViewController,UITableViewDelegate,UITableViewData
     @objc func backActionClick() {
         self.navigationController?.popViewController(animated: true)
     }
-
+    
+    @objc func editorActionClick() {
+        let editorVC = EditorViewController()
+        editorVC.editorNotes = loanCacheModel
+        self.navigationController?.pushViewController(editorVC, animated: false)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

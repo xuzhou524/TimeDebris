@@ -9,6 +9,7 @@
 import UIKit
 
 class EditorViewController: UIViewController,UIGestureRecognizerDelegate,UITextViewDelegate {
+    var editorNotes : LoanCacheManage?
     var describeTextView : UITextView?
     
     let headTapView : UIView = {
@@ -149,6 +150,12 @@ class EditorViewController: UIViewController,UIGestureRecognizerDelegate,UITextV
         let tap = UITapGestureRecognizer(target: self, action: #selector(viewTap))
         self.view.addGestureRecognizer(tap)
         tap.delegate = self
+        
+        
+        if editorNotes != nil {
+            self.titleTextField.text = editorNotes?.titleStr
+            self.describeTextView?.text = editorNotes?.detailsStr
+        }
     }
     
     @objc func saveClick(){
@@ -176,6 +183,9 @@ class EditorViewController: UIViewController,UIGestureRecognizerDelegate,UITextV
             loanModelArray = NSMutableArray()
             loanModelArray?.add(loanModel)
         }else{
+            if editorNotes != nil {
+                loanModelArray?.remove(self.editorNotes)
+            }
             loanModelArray?.insert(loanModel, at: 0)
         }
         UserDefaults.standard.saveCustomObject(customObject: loanModelArray!, key: "kTMCacheLoanManage")
