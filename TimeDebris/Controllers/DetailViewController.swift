@@ -60,15 +60,14 @@ class DetailViewController: UIViewController,UITableViewDelegate,UITableViewData
         });
         
         let editorButton = UIButton()
-        editorButton.titleLabel?.font = XZClient.XZFont2(size: 15)
-        editorButton.setTitle("编辑", for: .normal)
+        editorButton.setBackgroundImage(UIImage.init(named: "editor")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        editorButton.tintColor = XZSwiftColor.generalOverallColor
         editorButton.setTitleColor(XZSwiftColor.generalOverallColor, for: .normal)
         headTapView.addSubview(editorButton)
         editorButton.snp.makeConstraints({ (make) -> Void in
-            make.right.equalTo(headTapView).offset(-10)
+            make.right.equalTo(headTapView).offset(-15)
             make.centerY.equalTo(headTapView).offset(10)
-            make.height.equalTo(18)
-            make.width.equalTo(40)
+            make.width.height.equalTo(22)
         });
         
         let tapAction = UITapGestureRecognizer.init(target: self, action: #selector(DetailViewController.backActionClick))
