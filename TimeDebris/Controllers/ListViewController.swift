@@ -22,6 +22,11 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         tableView.separatorStyle = .none
         return tableView
     }()
+    
+    deinit {
+        /// 移除通知
+        NotificationCenter.default.removeObserver(self)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +63,7 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             make.centerX.equalTo(headTapView)
             make.centerY.equalTo(backImageView)
         });
-        let tapAction = UITapGestureRecognizer.init(target: self, action: #selector(UserViewController.backActionClick))
+        let tapAction = UITapGestureRecognizer.init(target: self, action: #selector(ListViewController.backActionClick))
         backImageView.addGestureRecognizer(tapAction)
         
         self.tableView.delegate = self
@@ -70,6 +75,8 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         });
         
         regClass(self.tableView, cell: ListTableViewCell.self)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(ListViewController.notificationClick), name: NSNotification.Name(rawValue:"isTest"), object: nil)
     }
     
     // MARK: - Table view data source
@@ -148,6 +155,11 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     @objc func backActionClick() {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func notificationClick() {
+        self.cacheLoanNoteArray = UserDefaults.standard.getCustomObject(forKey: "kTMCacheLoanManage") as? NSMutableArray
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {

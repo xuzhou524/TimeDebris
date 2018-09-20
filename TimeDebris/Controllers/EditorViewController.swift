@@ -10,6 +10,11 @@ import UIKit
 
 class EditorViewController: UIViewController,UIGestureRecognizerDelegate,UITextViewDelegate {
     var editorNotes : LoanCacheManage?
+//    var callback = {(editorNotes: LoanCacheManage) -> LoanCacheManage in
+//        return editorNotes
+//    }
+    var callback:((LoanCacheManage)->())?;
+    
     var describeTextView : UITextView?
     
     let headTapView : UIView = {
@@ -155,6 +160,7 @@ class EditorViewController: UIViewController,UIGestureRecognizerDelegate,UITextV
         if editorNotes != nil {
             self.titleTextField.text = editorNotes?.titleStr
             self.describeTextView?.text = editorNotes?.detailsStr
+            saveButton.setTitle("保存修改", for: .normal)
         }
     }
     
@@ -184,11 +190,22 @@ class EditorViewController: UIViewController,UIGestureRecognizerDelegate,UITextV
             loanModelArray?.add(loanModel)
         }else{
             if editorNotes != nil {
-                loanModelArray?.remove(self.editorNotes)
+                let legh = loanModelArray?.count ?? 0
+                for i in 0..<legh {
+                    let tempModel = loanModelArray?[i] as! LoanCacheManage
+                    if ((editorNotes?.titleStr == tempModel.titleStr)  && (editorNotes?.detailsStr == tempModel.detailsStr) && (editorNotes?.timeStr == tempModel.timeStr)){
+                        loanModelArray?.remove(tempModel as Any)
+                        break
+                    }
+                }
             }
             loanModelArray?.insert(loanModel, at: 0)
         }
         UserDefaults.standard.saveCustomObject(customObject: loanModelArray!, key: "kTMCacheLoanManage")
+        if callback != nil {
+            callback!(loanModel)
+        }
+        NotificationCenter.default.post(name: NSNotification.Name("isTest"), object: self, userInfo: nil)
         self.backActionClick()
     }
     
@@ -218,7 +235,7 @@ class EditorViewController: UIViewController,UIGestureRecognizerDelegate,UITextV
             self.describeTextView?.textColor = XZSwiftColor.xzGlay190
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

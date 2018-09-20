@@ -11,6 +11,7 @@ import UIKit
 class DetailViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     var loanCacheModel : LoanCacheManage?
+    var titleLabel : UILabel?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -48,12 +49,12 @@ class DetailViewController: UIViewController,UITableViewDelegate,UITableViewData
             make.width.height.equalTo(18)
         });
         
-        let titleLabel = UILabel()
-        titleLabel.text = self.loanCacheModel?.titleStr
-        titleLabel.textColor = XZSwiftColor.generalOverallColor
-        titleLabel.font = XZClient.XZFont2(size: 18)
-        headTapView.addSubview(titleLabel)
-        titleLabel.snp.makeConstraints({ (make) -> Void in
+        self.titleLabel = UILabel()
+        self.titleLabel!.text = self.loanCacheModel?.titleStr
+        self.titleLabel!.textColor = XZSwiftColor.generalOverallColor
+        self.titleLabel!.font = XZClient.XZFont2(size: 18)
+        headTapView.addSubview(self.titleLabel!)
+        self.titleLabel!.snp.makeConstraints({ (make) -> Void in
             make.centerX.equalTo(headTapView)
             make.centerY.equalTo(backImageView)
         });
@@ -84,6 +85,7 @@ class DetailViewController: UIViewController,UITableViewDelegate,UITableViewData
         });
         
         regClass(self.tableView, cell: DetailTableViewCell.self)
+        
     }
     
     // MARK: - Table view data source
@@ -125,8 +127,14 @@ class DetailViewController: UIViewController,UITableViewDelegate,UITableViewData
     }
     
     @objc func editorActionClick() {
+        weak var weakSelf = self;
         let editorVC = EditorViewController()
         editorVC.editorNotes = loanCacheModel
+        editorVC.callback = { (model : LoanCacheManage) -> () in
+            weakSelf!.loanCacheModel = model
+            weakSelf!.titleLabel!.text = model.titleStr
+            weakSelf?.tableView.reloadData()
+        }
         self.navigationController?.pushViewController(editorVC, animated: false)
     }
     
