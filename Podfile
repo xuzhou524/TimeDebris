@@ -6,6 +6,7 @@ def pods
    pod 'Fabric'
    pod 'Crashlytics'
    pod 'SnapKit'
+   pod 'Alamofire'
 end
 
 
