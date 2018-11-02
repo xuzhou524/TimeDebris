@@ -26,7 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.share()
         
         UIApplication.shared.statusBarStyle = .lightContent
-        
         return true
     }
     

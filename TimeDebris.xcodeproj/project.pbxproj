@@ -29,6 +29,9 @@
 		538D32DD1FFE209800DF4C9A /* XZClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538D32DA1FFE209800DF4C9A /* XZClient.swift */; };
 		538D32DE1FFE209800DF4C9A /* XZSwiftColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538D32DB1FFE209800DF4C9A /* XZSwiftColor.swift */; };
 		538D32DF1FFE209800DF4C9A /* XZSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538D32DC1FFE209800DF4C9A /* XZSetting.swift */; };
+		539BF3FC218C2FCB00271208 /* iCloudHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 539BF3F7218C2FCA00271208 /* iCloudHandle.m */; };
+		539BF3FD218C2FCB00271208 /* ZZRDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 539BF3F9218C2FCA00271208 /* ZZRDocument.m */; };
+		539BF3FE218C2FCB00271208 /* ZZRModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 539BF3FB218C2FCA00271208 /* ZZRModel.m */; };
 		53D27C4420B6615C0071ABDE /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D27C2120B6615C0071ABDE /* MOBFoundation.framework */; };
 		53D27C4520B6615C0071ABDE /* ShareSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D27C2320B6615C0071ABDE /* ShareSDK.framework */; };
 		53D27C4620B6615C0071ABDE /* ShareSDKConfigFile.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 53D27C2620B6615C0071ABDE /* ShareSDKConfigFile.bundle */; };
@@ -135,6 +138,12 @@
 		538D32DA1FFE209800DF4C9A /* XZClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZClient.swift; sourceTree = "<group>"; };
 		538D32DB1FFE209800DF4C9A /* XZSwiftColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZSwiftColor.swift; sourceTree = "<group>"; };
 		538D32DC1FFE209800DF4C9A /* XZSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZSetting.swift; sourceTree = "<group>"; };
+		539BF3F6218C2FCA00271208 /* iCloudHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCloudHandle.h; sourceTree = "<group>"; };
+		539BF3F7218C2FCA00271208 /* iCloudHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCloudHandle.m; sourceTree = "<group>"; };
+		539BF3F8218C2FCA00271208 /* ZZRDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZRDocument.h; sourceTree = "<group>"; };
+		539BF3F9218C2FCA00271208 /* ZZRDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZRDocument.m; sourceTree = "<group>"; };
+		539BF3FA218C2FCA00271208 /* ZZRModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZRModel.h; sourceTree = "<group>"; };
+		539BF3FB218C2FCA00271208 /* ZZRModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZRModel.m; sourceTree = "<group>"; };
 		53D27C2120B6615C0071ABDE /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
 		53D27C2320B6615C0071ABDE /* ShareSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDK.framework; sourceTree = "<group>"; };
 		53D27C2620B6615C0071ABDE /* ShareSDKConfigFile.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDKConfigFile.bundle; sourceTree = "<group>"; };
@@ -342,6 +351,7 @@
 		538D32D21FFE1EEA00DF4C9A /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				539BF3F5218C2FCA00271208 /* CloudHandle */,
 				53D27C1F20B6615C0071ABDE /* SDK */,
 				5385831D205B9F2B001807C3 /* UITableView+FINAutomaticHeightCell */,
 				5385831A205B9F20001807C3 /* Extension */,
@@ -359,6 +369,19 @@
 				5338F83520B29ED100B6521F /* LoanCacheManage.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		539BF3F5218C2FCA00271208 /* CloudHandle */ = {
+			isa = PBXGroup;
+			children = (
+				539BF3F6218C2FCA00271208 /* iCloudHandle.h */,
+				539BF3F7218C2FCA00271208 /* iCloudHandle.m */,
+				539BF3F8218C2FCA00271208 /* ZZRDocument.h */,
+				539BF3F9218C2FCA00271208 /* ZZRDocument.m */,
+				539BF3FA218C2FCA00271208 /* ZZRModel.h */,
+				539BF3FB218C2FCA00271208 /* ZZRModel.m */,
+			);
+			path = CloudHandle;
 			sourceTree = "<group>";
 		};
 		53D27C1F20B6615C0071ABDE /* SDK */ = {
@@ -744,11 +767,14 @@
 				53830439205B6FA5003ABE37 /* ListViewController.swift in Sources */,
 				5338F83620B29ED100B6521F /* LoanCacheManage.swift in Sources */,
 				538D32D71FFE1EEA00DF4C9A /* DWViewCell.m in Sources */,
+				539BF3FD218C2FCB00271208 /* ZZRDocument.m in Sources */,
 				53830437205B6477003ABE37 /* UserViewController.swift in Sources */,
 				5379E34720BBA954002E039E /* DetailViewController.swift in Sources */,
 				53DD73F32060B8F900C67000 /* ListTableViewCell.swift in Sources */,
 				53D27C6820B6650E0071ABDE /* FriendshipTableViewCell.swift in Sources */,
+				539BF3FC218C2FCB00271208 /* iCloudHandle.m in Sources */,
 				532469E81FFE2BED00FD3101 /* RootViewController.swift in Sources */,
+				539BF3FE218C2FCB00271208 /* ZZRModel.m in Sources */,
 				53E24A9B1FFF2A1F002117AF /* HomeSampleView.swift in Sources */,
 				5383043B205B708F003ABE37 /* EditorViewController.swift in Sources */,
 				53858321205B9FA7001807C3 /* TitleTableViewCell.swift in Sources */,
