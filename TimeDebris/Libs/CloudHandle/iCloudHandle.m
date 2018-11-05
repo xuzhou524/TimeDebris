@@ -9,8 +9,8 @@
 #import "iCloudHandle.h"
 #import "ZZRDocument.h"
 
-#define UbiquityContainerIdentifiers @"iCloud.com.zzr.ZZRiCloudDemo"
-#define RECORD_TYPE_NAME @"Note"
+#define UbiquityContainerIdentifiers @"iCloud.com.TimeDebris.weiYinJi"
+#define RECORD_TYPE_NAME @"Notes"
 
 @implementation iCloudHandle
 
@@ -126,7 +126,7 @@
 
 #pragma mark - Cloud Kit
 
-+ (void)saveCloudKitModelWithTitle:(NSString *)title content:(NSString *)content photoImage:(UIImage *)image
++ (void)saveCloudKitModelWithTitle:(NSString *)title content:(NSString *)content photoImage:(UIImage *)image timeStr:(NSString *)timeStr
 {
     CKContainer *container = [CKContainer defaultContainer];
 
@@ -164,9 +164,10 @@
     
     CKAsset *asset = [[CKAsset alloc]initWithFileURL:url];
     
-    [noteRecord setValue:title forKey:@"title"];
-    [noteRecord setValue:content forKey:@"content"];
-    [noteRecord setValue:asset forKey:@"image"];
+    [noteRecord setObject:title forKey:@"titleStr"];
+    [noteRecord setObject:content forKey:@"detailsStr"];
+//    [noteRecord setValue:asset forKey:@"iconImageViewUrlStr"];
+    [noteRecord setValue:timeStr forKey:@"timeStr"];
     
     
     [datebase saveRecord:noteRecord completionHandler:^(CKRecord * _Nullable record, NSError * _Nullable error) {
@@ -242,7 +243,7 @@
 }
 
 //修改数据
-+ (void)changeCloudKitWithTitle:(NSString *)title content:(NSString *)content photoImage:(UIImage *)image RecordID:(CKRecordID *)recordID
++ (void)changeCloudKitWithTitle:(NSString *)title content:(NSString *)content photoImage:(UIImage *)image RecordID:(CKRecordID *)recordID timeStr:(NSString *)timeStr
 {
     //获取容器
     CKContainer *container = [CKContainer defaultContainer];
@@ -272,9 +273,11 @@
         NSURL *url = [NSURL fileURLWithPath:filePath];
         [imageData writeToURL:url atomically:YES];
         CKAsset *asset = [[CKAsset alloc]initWithFileURL:url];
-        [record setObject:title forKey:@"title"];
-        [record setObject:content forKey:@"content"];
-        [record setValue:asset forKey:@"photo"];
+        [record setObject:title forKey:@"titleStr"];
+        [record setObject:content forKey:@"detailsStr"];
+        [record setValue:asset forKey:@"iconImageViewUrlStr"];
+        [record setValue:timeStr forKey:@"timeStr"];
+        
         [database saveRecord:record completionHandler:^(CKRecord * _Nullable record, NSError * _Nullable error) {
             
             if(error)

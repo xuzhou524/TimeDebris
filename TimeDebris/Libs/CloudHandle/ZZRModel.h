@@ -10,7 +10,7 @@
 
 @interface ZZRModel : NSObject
 
-@property (nonatomic ,copy) NSString *title;
+@property (nonatomic ,copy) NSString *noteTitle;
 @property (nonatomic ,copy) NSString *content;
 @property (nonatomic ,strong) NSData *image;
 

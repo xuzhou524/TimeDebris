@@ -88,7 +88,9 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     @objc func finishedGetNewCloudData(notification:NSNotification){
         DispatchQueue.main.async(execute: {
-            self.cacheLoanNoteArray = notification.userInfo?["key"] as? NSMutableArray
+
+            print("==============  %@",notification.userInfo?["key"] as Any)
+            
             self.tableView.reloadData()
         })
     }

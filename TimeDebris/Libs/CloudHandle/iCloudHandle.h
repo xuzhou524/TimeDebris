@@ -35,7 +35,7 @@
 #pragma mark - Cloud Kit
 
 //保存数据
-+ (void)saveCloudKitModelWithTitle:(NSString *)title content:(NSString *)content photoImage:(UIImage *)image;
++ (void)saveCloudKitModelWithTitle:(NSString *)title content:(NSString *)content photoImage:(UIImage *)image timeStr:(NSString *)timeStr;
 //查询数据
 + (void)queryCloudKitData;
 //删除数据
@@ -43,7 +43,7 @@
 //查询单条数据
 + (void)querySingleRecordWithRecordID:(CKRecordID *)recordID;
 //修改数据
-+ (void)changeCloudKitWithTitle:(NSString *)title content:(NSString *)content photoImage:(UIImage *)image RecordID:(CKRecordID *)recordID;
++ (void)changeCloudKitWithTitle:(NSString *)title content:(NSString *)content photoImage:(UIImage *)image RecordID:(CKRecordID *)recordID timeStr:(NSString *)timeStr;
 
 
 @end
