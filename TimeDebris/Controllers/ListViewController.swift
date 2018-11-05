@@ -77,8 +77,22 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         regClass(self.tableView, cell: ListTableViewCell.self)
         
         NotificationCenter.default.addObserver(self, selector: #selector(ListViewController.notificationClick), name: NSNotification.Name(rawValue:"isTest"), object: nil)
+        self.setUpNotification()
+        iCloudHandle.queryCloudKitData()
+    
     }
     
+    func setUpNotification(){
+        NotificationCenter.default.addObserver(self, selector: #selector(ListViewController.finishedGetNewCloudData), name: NSNotification.Name(rawValue:"CloudDataQueryFinished"), object: nil)
+    }
+    
+    @objc func finishedGetNewCloudData(notification:NSNotification){
+        DispatchQueue.main.async(execute: {
+            self.cacheLoanNoteArray = notification.userInfo?["key"] as? NSMutableArray
+            self.tableView.reloadData()
+        })
+    }
+
     // MARK: - Table view data source
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
