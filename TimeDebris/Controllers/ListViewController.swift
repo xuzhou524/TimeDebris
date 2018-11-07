@@ -88,9 +88,20 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     @objc func finishedGetNewCloudData(notification:NSNotification){
         DispatchQueue.main.async(execute: {
-
-            print("==============  %@",notification.userInfo?["key"] as Any)
+            let notificationArray = notification.userInfo?["key"] as! NSMutableArray
             
+            let legh = notificationArray.count
+            for i in 0..<legh {
+                let noteRecord = notificationArray[i] as! CKRecord
+                let tempModel = LoanCacheManage()
+                tempModel.titleStr = noteRecord.value(forKey: "titleStr") as? String
+                tempModel.detailsStr = noteRecord.value(forKey: "detailsStr") as? String
+                tempModel.timeStr = noteRecord.value(forKey: "timeStr") as? String
+                if (self.cacheLoanNoteArray === nil) {
+                    self.cacheLoanNoteArray = NSMutableArray()
+                }
+                self.cacheLoanNoteArray?.add(tempModel);
+            }
             self.tableView.reloadData()
         })
     }
@@ -150,7 +161,7 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         //格式话输出
         let dformatter = DateFormatter()
         dformatter.dateFormat = "yyyy.MM.dd HH:mm"
-        
+
         userHeadCell.dateLabel?.text = dformatter.string(from: date)
         
         return userHeadCell
