@@ -77,33 +77,7 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         regClass(self.tableView, cell: ListTableViewCell.self)
         
         NotificationCenter.default.addObserver(self, selector: #selector(ListViewController.notificationClick), name: NSNotification.Name(rawValue:"isTest"), object: nil)
-        self.setUpNotification()
-        iCloudHandle.queryCloudKitData()
     
-    }
-    
-    func setUpNotification(){
-        NotificationCenter.default.addObserver(self, selector: #selector(ListViewController.finishedGetNewCloudData), name: NSNotification.Name(rawValue:"CloudDataQueryFinished"), object: nil)
-    }
-    
-    @objc func finishedGetNewCloudData(notification:NSNotification){
-        DispatchQueue.main.async(execute: {
-            let notificationArray = notification.userInfo?["key"] as! NSMutableArray
-            
-            let legh = notificationArray.count
-            for i in 0..<legh {
-                let noteRecord = notificationArray[i] as! CKRecord
-                let tempModel = LoanCacheManage()
-                tempModel.titleStr = noteRecord.value(forKey: "titleStr") as? String
-                tempModel.detailsStr = noteRecord.value(forKey: "detailsStr") as? String
-                tempModel.timeStr = noteRecord.value(forKey: "timeStr") as? String
-                if (self.cacheLoanNoteArray === nil) {
-                    self.cacheLoanNoteArray = NSMutableArray()
-                }
-                self.cacheLoanNoteArray?.add(tempModel);
-            }
-            self.tableView.reloadData()
-        })
     }
 
     // MARK: - Table view data source
