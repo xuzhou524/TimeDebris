@@ -900,7 +900,7 @@
 					"$(PROJECT_DIR)/TimeDebris/Libs/SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK",
 					"$(PROJECT_DIR)/TimeDebris/Libs/SDK/ShareSDK/Support/PlatformSDK/WeChatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.TimeDebris.weiYinJi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TimeDebris.suishiNotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TimeDebris/TimeDebris-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -936,7 +936,7 @@
 					"$(PROJECT_DIR)/TimeDebris/Libs/SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK",
 					"$(PROJECT_DIR)/TimeDebris/Libs/SDK/ShareSDK/Support/PlatformSDK/WeChatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.TimeDebris.weiYinJi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TimeDebris.suishiNotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TimeDebris/TimeDebris-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
