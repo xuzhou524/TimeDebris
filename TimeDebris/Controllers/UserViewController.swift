@@ -104,6 +104,8 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             return 100
         }else if (indexPath as NSIndexPath).row == 1 {
             return 15
+        }else if (indexPath as NSIndexPath).row == 3 {
+            return 0
         }
         return 55
     }
