@@ -56,9 +56,8 @@
 		53D27C6220B662070071ABDE /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D27C6120B662070071ABDE /* libstdc++.tbd */; };
 		53D27C6620B664ED0071ABDE /* FriendshipRecommenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D27C6520B664ED0071ABDE /* FriendshipRecommenViewController.swift */; };
 		53D27C6820B6650E0071ABDE /* FriendshipTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D27C6720B6650E0071ABDE /* FriendshipTableViewCell.swift */; };
-		53D27C6A20B665A40071ABDE /* fangdai.png in Resources */ = {isa = PBXBuildFile; fileRef = 53D27C6920B665A40071ABDE /* fangdai.png */; };
+		53D27C6A20B665A40071ABDE /* fang.png in Resources */ = {isa = PBXBuildFile; fileRef = 53D27C6920B665A40071ABDE /* fang.png */; };
 		53D27C6C20B665AD0071ABDE /* lanyamao.png in Resources */ = {isa = PBXBuildFile; fileRef = 53D27C6B20B665AD0071ABDE /* lanyamao.png */; };
-		53D27C6E20B665B50071ABDE /* longdai.png in Resources */ = {isa = PBXBuildFile; fileRef = 53D27C6D20B665B50071ABDE /* longdai.png */; };
 		53D27C7020B665BD0071ABDE /* onePai.png in Resources */ = {isa = PBXBuildFile; fileRef = 53D27C6F20B665BD0071ABDE /* onePai.png */; };
 		53D27C7220B665D10071ABDE /* tianqi.png in Resources */ = {isa = PBXBuildFile; fileRef = 53D27C7120B665D10071ABDE /* tianqi.png */; };
 		53D27C7420B665D80071ABDE /* v2ex.png in Resources */ = {isa = PBXBuildFile; fileRef = 53D27C7320B665D80071ABDE /* v2ex.png */; };
@@ -170,9 +169,8 @@
 		53D27C6420B663230071ABDE /* TimeDebris-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TimeDebris-Bridging-Header.h"; sourceTree = "<group>"; };
 		53D27C6520B664ED0071ABDE /* FriendshipRecommenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendshipRecommenViewController.swift; sourceTree = "<group>"; };
 		53D27C6720B6650E0071ABDE /* FriendshipTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendshipTableViewCell.swift; sourceTree = "<group>"; };
-		53D27C6920B665A40071ABDE /* fangdai.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fangdai.png; sourceTree = "<group>"; };
+		53D27C6920B665A40071ABDE /* fang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fang.png; sourceTree = "<group>"; };
 		53D27C6B20B665AD0071ABDE /* lanyamao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lanyamao.png; sourceTree = "<group>"; };
-		53D27C6D20B665B50071ABDE /* longdai.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = longdai.png; sourceTree = "<group>"; };
 		53D27C6F20B665BD0071ABDE /* onePai.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onePai.png; sourceTree = "<group>"; };
 		53D27C7120B665D10071ABDE /* tianqi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tianqi.png; sourceTree = "<group>"; };
 		53D27C7320B665D80071ABDE /* v2ex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = v2ex.png; sourceTree = "<group>"; };
@@ -484,9 +482,8 @@
 				53D27C7320B665D80071ABDE /* v2ex.png */,
 				53D27C7120B665D10071ABDE /* tianqi.png */,
 				53D27C6F20B665BD0071ABDE /* onePai.png */,
-				53D27C6D20B665B50071ABDE /* longdai.png */,
 				53D27C6B20B665AD0071ABDE /* lanyamao.png */,
-				53D27C6920B665A40071ABDE /* fangdai.png */,
+				53D27C6920B665A40071ABDE /* fang.png */,
 				53DD73ED2060B3A800C67000 /* arrow_right@2x.png */,
 				53DD73EC2060B3A800C67000 /* arrow_right@3x.png */,
 				53DD73F82060C55E00C67000 /* d_Arrow_left@2x.png */,
@@ -659,7 +656,7 @@
 				53DD73FF2060C6FF00C67000 /* guanbi@3x.png in Resources */,
 				53D27C4620B6615C0071ABDE /* ShareSDKConfigFile.bundle in Resources */,
 				53D27C7020B665BD0071ABDE /* onePai.png in Resources */,
-				53D27C6A20B665A40071ABDE /* fangdai.png in Resources */,
+				53D27C6A20B665A40071ABDE /* fang.png in Resources */,
 				53D27C7220B665D10071ABDE /* tianqi.png in Resources */,
 				53DD74232062453D00C67000 /* Calendar_24.png in Resources */,
 				53DD743B2062453D00C67000 /* Calendar_06.png in Resources */,
@@ -675,7 +672,6 @@
 				532150921FF5F9CE00C67F13 /* Assets.xcassets in Resources */,
 				53DD74212062453D00C67000 /* Calendar_10.png in Resources */,
 				53DD74252062453D00C67000 /* Calendar_27.png in Resources */,
-				53D27C6E20B665B50071ABDE /* longdai.png in Resources */,
 				53DD74392062453D00C67000 /* Calendar_16.png in Resources */,
 				53D27C7420B665D80071ABDE /* v2ex.png in Resources */,
 				53D27C6C20B665AD0071ABDE /* lanyamao.png in Resources */,

@@ -19,8 +19,8 @@ class FriendshipRecommenViewController: UIViewController,UITableViewDelegate,UIT
         return tableView
     }()
     
-    let iconArray = ["longdai","v2ex","fangdai","onePai","lanyamao","tianqi"]
-    let appUrlArray = ["https://itunes.apple.com/cn/app/id900365369?mt=8",
+    let iconArray = ["v2ex","fang","onePai","lanyamao","tianqi"]
+    let appUrlArray = [
                        "https://itunes.apple.com/cn/app/id1078157349?mt=8",
                        "https://itunes.apple.com/cn/app/id1272033544?mt=8",
                        "https://itunes.apple.com/cn/app/id1239242152?mt=8",
