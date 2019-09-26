@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
     var cacheLoanNoteArray: NSMutableArray?
-    
+    var bannerView: GADBannerView!
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         UIApplication.shared.statusBarStyle = .lightContent
@@ -30,8 +31,17 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = XZSwiftColor.black
+        self.view.backgroundColor = XZSwiftColor.backgroundColor
         self.navigationController?.navigationBar.isHidden = true
+        
+        bannerView = GADBannerView.init(frame: CGRect(x: 0,  y: XZClient.ScreenHeight() - 60, width: XZClient.ScreenWidth(), height: 50))
+        bannerView.adSize = kGADAdSizeBanner
+        bannerView.center.x = self.view.center.x
+        self.view.addSubview(bannerView)
+        self.view.bringSubview(toFront: bannerView)
+        bannerView.adUnitID = "ca-app-pub-9353975206269682/1548587487"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
         
         self.cacheLoanNoteArray = UserDefaults.standard.getCustomObject(forKey: "kTMCacheLoanManage") as? NSMutableArray
         
@@ -71,7 +81,8 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         self.view.addSubview(self.tableView)
         self.tableView.snp.makeConstraints({ (make) -> Void in
             make.top.equalTo(headTapView.snp.bottom)
-            make.left.right.bottom.equalTo(self.view)
+            make.left.right.equalTo(self.view)
+            make.bottom.equalTo(self.view.snp_bottom).offset(-70)
         });
         
         regClass(self.tableView, cell: ListTableViewCell.self)

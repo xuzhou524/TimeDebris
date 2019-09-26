@@ -7,6 +7,7 @@ def pods
    pod 'Crashlytics'
    pod 'SnapKit'
    pod 'Alamofire'
+   pod 'Google-Mobile-Ads-SDK'
 end
 
 

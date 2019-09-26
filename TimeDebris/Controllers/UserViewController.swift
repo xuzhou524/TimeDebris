@@ -8,11 +8,12 @@
 
 import UIKit
 import StoreKit
+import GoogleMobileAds
 
 class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
     var backImgHeight = XZClient.ScreenWidth()
     var backImgWidth = XZClient.ScreenWidth()
-    
+    var bannerView: GADBannerView!
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         UIApplication.shared.statusBarStyle = .lightContent
@@ -88,6 +89,15 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         regClass(self.tableView, cell: TitleTableViewCell.self)
         regClass(self.tableView, cell: More_InterTableViewCell.self)
+        
+        bannerView = GADBannerView.init(frame: CGRect(x: 0,  y: XZClient.ScreenHeight() - 60, width: XZClient.ScreenWidth(), height: 50))
+        bannerView.adSize = kGADAdSizeBanner
+        bannerView.center.x = self.view.center.x
+        self.view.addSubview(bannerView)
+        self.view.bringSubview(toFront: bannerView)
+        bannerView.adUnitID = "ca-app-pub-9353975206269682/2091512965"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
     }
     
     // MARK: - Table view data source

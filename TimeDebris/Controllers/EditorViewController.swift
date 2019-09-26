@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class EditorViewController: UIViewController,UIGestureRecognizerDelegate,UITextViewDelegate {
     var editorNotes : LoanCacheManage?
+    var bannerView: GADBannerView!
 //    var callback = {(editorNotes: LoanCacheManage) -> LoanCacheManage in
 //        return editorNotes
 //    }
@@ -54,6 +56,15 @@ class EditorViewController: UIViewController,UIGestureRecognizerDelegate,UITextV
         self.setUpHeadView()
         self.setUpEditorView()
         self.setUpToobarView()
+        
+        bannerView = GADBannerView.init(frame: CGRect(x: 0,  y: XZClient.ScreenHeight() - 60, width: XZClient.ScreenWidth(), height: 50))
+        bannerView.adSize = kGADAdSizeBanner
+        bannerView.center.x = self.view.center.x
+        self.view.addSubview(bannerView)
+        self.view.bringSubview(toFront: bannerView)
+        bannerView.adUnitID = "ca-app-pub-9353975206269682/8518703400"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
     }
     
     func setUpHeadView() {
@@ -80,7 +91,8 @@ class EditorViewController: UIViewController,UIGestureRecognizerDelegate,UITextV
         tapView.backgroundColor = XZSwiftColor.clear
         self.view.addSubview(tapView)
         tapView.snp.makeConstraints({ (make) -> Void in
-            make.left.right.bottom.equalTo(self.view)
+            make.left.right.equalTo(self.view)
+            make.bottom.equalTo(self.view).offset(-70)
             make.height.equalTo(130)
         });
         
