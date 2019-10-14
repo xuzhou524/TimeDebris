@@ -114,8 +114,6 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             return 100
         }else if (indexPath as NSIndexPath).row == 1 {
             return 15
-        }else if (indexPath as NSIndexPath).row == 4 {
-            return 0
         }
         return 55
     }
@@ -144,9 +142,6 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             baseCell.titleLabel?.text = "推荐给记友"
             baseCell.detaileLabel?.text = ""
         }else if (indexPath as NSIndexPath).row == 4 {
-            baseCell.titleLabel?.text = "开发者app集锦"
-            baseCell.detaileLabel?.text = ""
-        }else if (indexPath as NSIndexPath).row == 5 {
             baseCell.titleLabel?.text = "随时笔记"
             let infoDict = Bundle.main.infoDictionary
             if let info = infoDict {
@@ -162,9 +157,6 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 3 {
             self.share()
-        }else if indexPath.row == 4 {
-            let friendVC = FriendshipRecommenViewController()
-            self.navigationController?.pushViewController(friendVC, animated: true);
         }
     }
     

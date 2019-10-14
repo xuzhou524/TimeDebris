@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         GADMobileAds.sharedInstance().start(completionHandler: nil)
+        GADMobileAds.configure(withApplicationID: "ca-app-pub-9353975206269682~4478003155")
         self.window = UIWindow()
         self.window?.frame = UIScreen.main.bounds
         self.window?.backgroundColor = UIColor.white

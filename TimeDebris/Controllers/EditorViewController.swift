@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMobileAds
 
-class EditorViewController: UIViewController,UIGestureRecognizerDelegate,UITextViewDelegate {
+class EditorViewController: UIViewController,UIGestureRecognizerDelegate,UITextViewDelegate,GADBannerViewDelegate {
     var editorNotes : LoanCacheManage?
     var bannerView: GADBannerView!
 //    var callback = {(editorNotes: LoanCacheManage) -> LoanCacheManage in
@@ -64,7 +64,17 @@ class EditorViewController: UIViewController,UIGestureRecognizerDelegate,UITextV
         self.view.bringSubview(toFront: bannerView)
         bannerView.adUnitID = "ca-app-pub-9353975206269682/8518703400"
         bannerView.rootViewController = self
-        bannerView.load(GADRequest())
+        bannerView.delegate = self
+
+        let request = GADRequest()
+        request.testDevices = [(kGADSimulatorID as! String)]
+        bannerView.load(request)
+        
+        bannerView.backgroundColor = UIColor.orange
+    }
+
+    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
+        print(error)
     }
     
     func setUpHeadView() {
