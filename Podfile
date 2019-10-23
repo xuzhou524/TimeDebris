@@ -3,8 +3,8 @@ inhibit_all_warnings!
 use_frameworks!
 
 def pods
-   pod 'SnapKit'
-   pod 'Google-Mobile-Ads-SDK'
+  pod 'SnapKit'
+  pod 'Google-Mobile-Ads-SDK'
 end
 
 

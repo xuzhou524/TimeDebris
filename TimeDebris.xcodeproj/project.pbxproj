@@ -13,7 +13,6 @@
 		532150901FF5F9CE00C67F13 /* TimeDebris.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5321508E1FF5F9CE00C67F13 /* TimeDebris.xcdatamodeld */; };
 		532150921FF5F9CE00C67F13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 532150911FF5F9CE00C67F13 /* Assets.xcassets */; };
 		532469E81FFE2BED00FD3101 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532469E71FFE2BED00FD3101 /* RootViewController.swift */; };
-		5338EFE021898D1100022A9C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5338EFDF21898D1100022A9C /* CloudKit.framework */; };
 		5338F83620B29ED100B6521F /* LoanCacheManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5338F83520B29ED100B6521F /* LoanCacheManage.swift */; };
 		536FC00F20B7FCE800D232B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 536FC00E20B7FCE800D232B3 /* Main.storyboard */; };
 		5379E34720BBA954002E039E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5379E34620BBA954002E039E /* DetailViewController.swift */; };
@@ -87,7 +86,6 @@
 		532150911FF5F9CE00C67F13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		532150961FF5F9CE00C67F13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		532469E71FFE2BED00FD3101 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		5338EFDE21898D0700022A9C /* TimeDebris.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TimeDebris.entitlements; sourceTree = "<group>"; };
 		5338EFDF21898D1100022A9C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		5338F83520B29ED100B6521F /* LoanCacheManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanCacheManage.swift; sourceTree = "<group>"; };
 		536FC00E20B7FCE800D232B3 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -101,6 +99,7 @@
 		538D32DA1FFE209800DF4C9A /* XZClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZClient.swift; sourceTree = "<group>"; };
 		538D32DB1FFE209800DF4C9A /* XZSwiftColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZSwiftColor.swift; sourceTree = "<group>"; };
 		538D32DC1FFE209800DF4C9A /* XZSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZSetting.swift; sourceTree = "<group>"; };
+		5396D829235FE01F00879E6A /* TimeDebris.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = TimeDebris.entitlements; sourceTree = "<group>"; };
 		53C6CCF2233C5C5E001F65ED /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		53D27C5720B661A50071ABDE /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		53D27C5920B661BA0071ABDE /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -163,7 +162,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5338EFE021898D1100022A9C /* CloudKit.framework in Frameworks */,
 				53D27C6220B662070071ABDE /* libstdc++.tbd in Frameworks */,
 				53D27C6020B661FA0071ABDE /* JavaScriptCore.framework in Frameworks */,
 				53D27C5E20B661E20071ABDE /* ImageIO.framework in Frameworks */,
@@ -180,6 +178,7 @@
 		5321507B1FF5F9CD00C67F13 = {
 			isa = PBXGroup;
 			children = (
+				5396D829235FE01F00879E6A /* TimeDebris.entitlements */,
 				532150861FF5F9CD00C67F13 /* TimeDebris */,
 				532150851FF5F9CD00C67F13 /* Products */,
 				CDB51307132B8D1270E2BF19 /* Pods */,
@@ -198,7 +197,6 @@
 		532150861FF5F9CD00C67F13 /* TimeDebris */ = {
 			isa = PBXGroup;
 			children = (
-				5338EFDE21898D0700022A9C /* TimeDebris.entitlements */,
 				53DD73EB2060B39D00C67000 /* Resources */,
 				532469E61FFE2BED00FD3101 /* Controllers */,
 				538D32D51FFE1EEA00DF4C9A /* Model */,
@@ -366,7 +364,7 @@
 				532150801FF5F9CD00C67F13 /* Sources */,
 				532150811FF5F9CD00C67F13 /* Frameworks */,
 				532150821FF5F9CD00C67F13 /* Resources */,
-				3E7ED99E3D8DB6A4A2AD245C /* [CP] Embed Pods Frameworks */,
+				35ED30095F91C27153CC5342 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -476,7 +474,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3E7ED99E3D8DB6A4A2AD245C /* [CP] Embed Pods Frameworks */ = {
+		35ED30095F91C27153CC5342 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -662,7 +660,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TimeDebris/TimeDebris.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 6JC78V6G2N;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -699,7 +697,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TimeDebris/TimeDebris.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 6JC78V6G2N;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
