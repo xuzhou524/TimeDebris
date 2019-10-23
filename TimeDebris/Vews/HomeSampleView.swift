@@ -77,14 +77,6 @@ class HomeSampleView: UIView {
             make.left.equalTo(self).offset(30)
             make.bottom.equalTo(self).offset(-30)
         });
-
-//        self.addSubview(englishLabel)
-//        englishLabel.text = "Tidy up a little life, record the story of time"
-//        englishLabel.snp.makeConstraints({ (make) -> Void in
-//            make.left.equalTo(self).offset(10)
-//            make.right.equalTo(self).offset(-10)
-//            make.bottom.equalTo(self).offset(-20)
-//        });
     }
     
     required init?(coder aDecoder: NSCoder) {

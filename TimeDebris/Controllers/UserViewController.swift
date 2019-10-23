@@ -106,7 +106,7 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return 5
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -161,28 +161,8 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     func share()  {
-        // 1.创建分享参数
-        let shareParames = NSMutableDictionary()
-        shareParames.ssdkSetupShareParams(byText: "拾掇生活中的点滴\n记录时光的故事",
-                                          images : UIImage(named: "Icon-60"),
-                                          url : NSURL(string:"https://itunes.apple.com/cn/app/id1330908170") as URL?,
-                                          title : "随时笔记 - 时刻记录你的生活",
-                                          type : SSDKContentType.auto)
-        
-        SSUIShareActionSheetStyle.setShareActionSheetStyle(.simple)
-        //2.进行分享
-        _ = ShareSDK.showShareActionSheet(nil, items: nil, shareParams: shareParames) { (state : SSDKResponseState, platformType : SSDKPlatformType, userdata : [AnyHashable : Any]?, contentEnity : SSDKContentEntity?, error : Error?, end) in
-            
-            switch state{
-                
-            case SSDKResponseState.success: print("分享成功")
-            case SSDKResponseState.fail:    print("分享失败,错误描述:\(String(describing: error))")
-            case SSDKResponseState.cancel:  print("分享取消")
-                
-            default:
-                break
-            }
-        }
+        let activityController = UIActivityViewController(activityItems: ["随时笔记 - 时刻记录你的生活,拾掇生活中的点滴\n记录时光的故事" + "https://itunes.apple.com/cn/app/id1330908170" ], applicationActivities: nil)
+        UIApplication.shared.keyWindow?.rootViewController?.present(activityController, animated: true, completion: nil)
     }
     
     @objc func zanImageViewTap(){

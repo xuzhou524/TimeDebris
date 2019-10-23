@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 
 class RootViewController: UIViewController {
     var  titleStr: String? = "时光音乐电台"
@@ -62,8 +61,6 @@ class RootViewController: UIViewController {
         
         let userTapAction = UITapGestureRecognizer.init(target: self, action: #selector(RootViewController.homeTapToUserAction))
         homeTapView.userImageView.addGestureRecognizer(userTapAction)
-        
-//        self.asyncRequestData()
     }
     
     @objc func homeTapToAddAction() {
@@ -74,30 +71,6 @@ class RootViewController: UIViewController {
         self.navigationController?.view.layer.add(transition, forKey: nil)
         self.navigationController?.pushViewController(EditorViewController(), animated: false)
     }
-    
-//    func asyncRequestData() -> Void{
-//        let urlString = "https://v2.jinrishici.com/one.json"
-//        Alamofire.request(urlString, method: .get, parameters: nil).responseJSON{ (response) -> Void in
-//            if response.result.error == nil {
-//                if let dict = response.result.value as? NSDictionary {
-//                    if let dataDict = dict["data"] as? NSDictionary {
-//                        if let originDict = dataDict["origin"] as? NSDictionary {
-//                            let dynasty = originDict["dynasty"] as? String
-//
-//                            let title = originDict["title"] as? String
-//                            let author = originDict["author"] as? String
-//                            var authorStr = "|" + " " + dynasty! + " " + author! + " " + title! as? String
-//                            let count = authorStr?.Lenght
-//                            for i in 1..<count! {
-//                                authorStr!.insert("\n", at: authorStr!.index(authorStr!.startIndex, offsetBy: i * 2 - 1))
-//                            }
-//                            self.homeSampleView.authorLabel.text = authorStr
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//    }
     
     @objc func homeTapToListAction() {
         self.navigationController?.pushViewController(ListViewController(), animated: true)
@@ -111,7 +84,5 @@ class RootViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 

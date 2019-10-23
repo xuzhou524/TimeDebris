@@ -1,12 +1,9 @@
-platform:ios,’9.0’
+platform:ios,’10.0’
 inhibit_all_warnings!
 use_frameworks!
 
 def pods
-   pod 'Fabric'
-   pod 'Crashlytics'
    pod 'SnapKit'
-   pod 'Alamofire'
    pod 'Google-Mobile-Ads-SDK'
 end
 

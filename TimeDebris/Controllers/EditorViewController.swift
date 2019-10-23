@@ -67,10 +67,7 @@ class EditorViewController: UIViewController,UIGestureRecognizerDelegate,UITextV
         bannerView.delegate = self
 
         let request = GADRequest()
-        request.testDevices = [(kGADSimulatorID as! String)]
         bannerView.load(request)
-        
-        bannerView.backgroundColor = UIColor.orange
     }
 
     func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
