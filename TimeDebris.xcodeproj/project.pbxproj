@@ -660,25 +660,13 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TimeDebris/TimeDebris.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 6JC78V6G2N;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/TimeDebris/Libs/SDK/Required",
-					"$(PROJECT_DIR)/TimeDebris/Libs/SDK/ShareSDK",
-					"$(PROJECT_DIR)/TimeDebris/Libs/SDK/ShareSDK/Support/Optional",
-					"$(PROJECT_DIR)/TimeDebris/Libs/SDK/ShareSDK/Support/PlatformConnector",
-					"$(PROJECT_DIR)/TimeDebris/Libs/SDK/ShareSDK/Support/PlatformSDK/QQSDK",
-					"$(PROJECT_DIR)/TimeDebris/Libs/SDK/ShareSDK/Support/Required",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = TimeDebris/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/TimeDebris/Libs/SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK",
-					"$(PROJECT_DIR)/TimeDebris/Libs/SDK/ShareSDK/Support/PlatformSDK/WeChatSDK",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TimeDebris.weiYinJi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TimeDebris/TimeDebris-Bridging-Header.h";
@@ -697,25 +685,13 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TimeDebris/TimeDebris.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 6JC78V6G2N;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/TimeDebris/Libs/SDK/Required",
-					"$(PROJECT_DIR)/TimeDebris/Libs/SDK/ShareSDK",
-					"$(PROJECT_DIR)/TimeDebris/Libs/SDK/ShareSDK/Support/Optional",
-					"$(PROJECT_DIR)/TimeDebris/Libs/SDK/ShareSDK/Support/PlatformConnector",
-					"$(PROJECT_DIR)/TimeDebris/Libs/SDK/ShareSDK/Support/PlatformSDK/QQSDK",
-					"$(PROJECT_DIR)/TimeDebris/Libs/SDK/ShareSDK/Support/Required",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = TimeDebris/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/TimeDebris/Libs/SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK",
-					"$(PROJECT_DIR)/TimeDebris/Libs/SDK/ShareSDK/Support/PlatformSDK/WeChatSDK",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TimeDebris.weiYinJi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TimeDebris/TimeDebris-Bridging-Header.h";
